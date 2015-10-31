@@ -1,163 +1,154 @@
 <div class="patient-master">
-<h1>Patient Master</h1> 
-<form role="form">
-  <div class="form-group">
-  
-    <div class="col-md-5">
-      <input tpe="text" ng-model="search" class="form-control" >            
-    <label>Search Patient by Name/Mobile</label>
-  <textarea class="form-control" rows="30" id="searchresult" ng-model="result"></textarea>
-  </div>
-</div>
-
-
-<div class="col-md-5">
-  <div class="form-group">
-    <div class="row">
-    <input onlyDigits ng-model="patient" class="form-control input-sm">
-      <label class="control-label"> Patient Id</label>
+  <h1>Patient Master</h1> 
+  <form role="form">
+    <div class="form-group">
+      <div class="col-md-5">
+        <input tpe="text" ng-model="search" class="form-control" >            
+        <label>Search Patient by Name/Mobile</label>
+        <textarea class="form-control" rows="30" id="searchresult" ng-model="result"></textarea>
+      </div>
     </div>
-  </div>
-    <div class ="form-group">
-      <div class="row">
-      
-        <label class="control-label">Name</label>
+
+    <div class="col-md-5">
+      <div class="form-group">
+        <div class="row">
+          <input onlyDigits ng-model="patient" class="form-control input-sm">
+          <label class="control-label"> Patient Id</label>
+        </div>
+      </div>
+      <div class ="form-group">
+        <div class="row">
+          <label class="control-label">Name</label>
           <select class="selectpicker" ng-model="pname" id="pid">
-           <option>MR</option>
+            <option>MR</option>
           </select>
           <input type="text" ng-model="patientname" class="form-control input-sm" placeholder="Name">
-         </div>
-       </div>
+        </div>
+      </div>
          
-        <div class="row">
-          <label class="control-label">Address</label>
-                <textarea ng-model="address" cols="30" rows="10"></textarea>
-              
-          </div>
+      <div class="row">
+        <label class="control-label">Address</label>
+        <textarea ng-model="address" cols="30" rows="10"></textarea>
+      </div>
           
-          <div class="row">
-<div class="form-group col-md-12 col-xs-12">
-    <label class="col-md-4 col-xs-12 control-label">State</label>
-    <div class="input-group col-md-8 col-xs-12 form-inline">
-        <div class="input-group" style="width: 49%;">
+      <div class="row">
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-md-4 col-xs-12 control-label">State</label>
+          <div class="input-group col-md-8 col-xs-12 form-inline">
+            <div class="input-group" style="width: 49%;">
             
-                <select class="selectpicker" ng-model="state" id="st">
-                  <option>MR</option>
-          </select>
+              <select class="selectpicker" ng-model="state" id="st">
+                <option>MR</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-
-    <div class="row">
-<div class="form-group col-md-12 col-xs-12">
-    <label class="col-md-4 col-xs-12 control-label">Distric</label>
-    <div class="input-group col-md-8 col-xs-12 form-inline">
-        <div class="input-group" style="width: 49%;">
+      <div class="row">
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-md-4 col-xs-12 control-label">Distric</label>
+          <div class="input-group col-md-8 col-xs-12 form-inline">
+            <div class="input-group" style="width: 49%;">
             
-                <select class="selectpicker" ng-model="distric" id="dist">
-                  <option>MR</option>
-          </select>
+              <select class="selectpicker" ng-model="distric" id="dist">
+                <option>MR</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-
-    <div class="row">
-<div class="form-group col-md-12 col-xs-12">
-    <label class="col-md-4 col-xs-12 control-label">City</label>
-    <div class="input-group col-md-8 col-xs-12 form-inline">
-        <div class="input-group" style="width: 49%;">
+      <div class="row">
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-md-4 col-xs-12 control-label">City</label>
+          <div class="input-group col-md-8 col-xs-12 form-inline">
+            <div class="input-group" style="width: 49%;">
             
-                <select class="selectpicker" ng-model="city" id="cty">
-                  <option>MR</option>
-          </select>
+              <select class="selectpicker" ng-model="city" id="cty">
+                <option>MR</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-
-<div class="row">
-<div class="form-group col-md-12 col-xs-12">
-    <label class="col-md-4 col-xs-12 control-label">DOB</label>
-    <div class="input-group col-md-8 col-xs-12 form-inline">
-        <p class="input-group">
+      <div class="row">
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-md-4 col-xs-12 control-label">DOB</label>
+          <div class="input-group col-md-8 col-xs-12 form-inline">
+            <p class="input-group">
               <input type="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
             </p>
-              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-md-4 col-xs-12 control-label">Age</label>
+          <div class="input-group col-md-8 col-xs-12 form-inline">
+            <div class="input-group" style="width: 49%;">
+              <input id="amexPercentage"  ng-model="age"class="form-control input-sm" type="text" placeholder="Age" maxlength="3">
             </div>
           </div>
-
-<div class="row">
-<div class="form-group col-md-12 col-xs-12">
-    <label class="col-md-4 col-xs-12 control-label">Age</label>
-    <div class="input-group col-md-8 col-xs-12 form-inline">
-        <div class="input-group" style="width: 49%;">
-            <input id="amexPercentage"  ng-model="age"class="form-control input-sm" type="text" placeholder="Age" maxlength="3">
-          </div>
         </div>
       </div>
-    </div>
 
-
-<div class="row">
-<div class="form-group col-md-12 col-xs-12">
-    <label class="col-md-4 col-xs-12 control-label">Gender</label>
-    <div class="input-group col-md-8 col-xs-12 form-inline">
-        <div class="input-group" style="width: 49%;">
+      <div class="row">
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-md-4 col-xs-12 control-label">Gender</label>
+          <div class="input-group col-md-8 col-xs-12 form-inline">
+            <div class="input-group" style="width: 49%;">
             
-                <select class="selectpicker" ng-model="gender" id="gndr">
-                  <option>MR</option>
-          </select>
+              <select class="selectpicker" ng-model="gender" id="gndr">
+                <option>MR</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-md-4 col-xs-12 control-label">Mobile No</label>
+          <div class="input-group col-md-8 col-xs-12 form-inline">
+            <div class="input-group" style="width: 49%;">
+              <input id="amexPercentage" ng-model="mobile" class="form-control input-sm" type="text" placeholder="Phone">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-md-4 col-xs-12 control-label">Phone</label>
+          <div class="input-group col-md-8 col-xs-12 form-inline">
+            <div class="input-group" style="width: 49%;">
+              <input id="amexPercentage" ng-model="phone" class="form-control input-sm" type="text" placeholder="Phone">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12 col-xs-12">
+          <label class="col-md-4 col-xs-12 control-label">Email</label>
+          <div class="input-group col-md-8 col-xs-12 form-inline">
+            <div class="input-group" style="width: 49%;">
+              <input id="amexPercentage" ng-model="email" class="form-control input-sm" type="text" placeholder="Email">
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-<div class="row">
-<div class="form-group col-md-12 col-xs-12">
-    <label class="col-md-4 col-xs-12 control-label">Mobile No</label>
-    <div class="input-group col-md-8 col-xs-12 form-inline">
-        <div class="input-group" style="width: 49%;">
-            <input id="amexPercentage" ng-model="mobile" class="form-control input-sm" type="text" placeholder="Phone">
-          </div>
-        </div>
-      </div>
-    </div>
-
-<div class="row">
-<div class="form-group col-md-12 col-xs-12">
-    <label class="col-md-4 col-xs-12 control-label">Phone</label>
-    <div class="input-group col-md-8 col-xs-12 form-inline">
-        <div class="input-group" style="width: 49%;">
-            <input id="amexPercentage" ng-model="phone" class="form-control input-sm" type="text" placeholder="Phone">
-          </div>
-        </div>
-      </div>
-    </div>
-
-<div class="row">
-<div class="form-group col-md-12 col-xs-12">
-    <label class="col-md-4 col-xs-12 control-label">Email</label>
-    <div class="input-group col-md-8 col-xs-12 form-inline">
-        <div class="input-group" style="width: 49%;">
-            <input id="amexPercentage" ng-model="email" class="form-control input-sm" type="text" placeholder="Email">
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col-md-2">
-   <div class="form-group">
-   <label>Photo</label>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label>Photo</label>
         <div class="fileupload fileupload-new" data-provides="fileupload">
           <div class="fileupload-preview thumbnail" style="width: 200px; height: 150px;"></div>
           <div>
@@ -173,37 +164,31 @@
             </div>
           </div>
 
-
-           <div class="row">
+          <div class="row">
             <div class="col-md-2">
               <button type="button" class="btn btn-info">Modify Patient</button>
-              
             </div>
           </div>
-              
 
-              <div class="row">
+          <div class="row">
             <div class="col-md-2">
-              
               <button type="button" class="btn btn-warning">Delete Patient</button>
-              
             </div>
           </div>
-          
 
           <div class="row">
             <div class="col-md-2">
               <button type="button" class="btn btn-success">Save</button>
             </div>
           </div>
-    
-        <div class="row">
-          <div class="col-md-2">
-            <button type="button" class="btn btn-danger">Cancel</button>
+  
+          <div class="row">
+            <div class="col-md-2">
+              <button type="button" class="btn btn-danger">Cancel</button>
+            </div>
           </div>
         </div>
-       
-        </div>
-      </form>
+      </div>
     </div>
-
+  </form>
+</div>

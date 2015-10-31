@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:ProfileMasterCtrl
+ * @name pmsApp.controller:ProfileMasterCtrl
  * @description
  * # ProfileMasterCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('ProfileMasterCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

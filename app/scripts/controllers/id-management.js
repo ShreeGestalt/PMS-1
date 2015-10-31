@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:IdManagementCtrl
+ * @name pmsApp.controller:IdManagementCtrl
  * @description
  * # IdManagementCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('IdManagementCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

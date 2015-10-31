@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:EntireTestCtrl
+ * @name pmsApp.controller:EntireTestCtrl
  * @description
  * # EntireTestCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('EntireTestCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

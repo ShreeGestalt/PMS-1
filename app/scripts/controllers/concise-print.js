@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:ConcisePrintCtrl
+ * @name pmsApp.controller:ConcisePrintCtrl
  * @description
  * # ConcisePrintCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('ConcisePrintCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

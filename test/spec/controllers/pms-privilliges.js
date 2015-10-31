@@ -3,7 +3,7 @@
 describe('Controller: PmsPrivilligesCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('pmsappApp'));
+  beforeEach(module('pmsApp'));
 
   var PmsPrivilligesCtrl,
     scope;

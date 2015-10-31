@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name pmsappApp
+ * @name pmsApp
  * @description
- * # pmsappApp
+ * # pmsApp
  *
  * Main module of the application.
  */
 angular
-  .module('pmsappApp', [
+  .module('pmsApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -34,6 +34,11 @@ angular
         url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+    .state('login', {
+        url: '/login',
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       })
     .state('genric', {
         url: '/genric',
@@ -185,57 +190,57 @@ angular
         templateUrl: 'views/entire-test.html',
         controller: 'EntireTestCtrl'
       })
-    .state('/addgroup', {
+    .state('addgroup', {
         url: '/addgroup',
         templateUrl: 'views/addgroup.html',
         controller: 'MainCtrl'
       })
-    .state('/addemployeecategory', {
+    .state('addemployeecategory', {
         url: '/addemployeecategory',
         templateUrl: 'views/addemployeecategory.html',
         controller: 'MainCtrl'
       })
-    .state('/addfaculty', {
+    .state('addfaculty', {
         url: '/addfaculty',
         templateUrl: 'views/addfaculty.html',
         controller: 'MainCtrl'
       })
-    .state('/testmaster', {
+    .state('testmaster', {
         url: '/testmaster',
         templateUrl: 'views/testmaster.html',
         controller: 'TestMasterDetailsCtrl'
       })
-    .state('/addcontactcategory', {
+    .state('addcontactcategory', {
         url: '/addcontactcategory',
         templateUrl: 'views/addcontactcategory.html',
         controller: 'MainCtrl'
       })
-    .state('/addexamtype', {
+    .state('addexamtype', {
         url: '/addexamtype',
         templateUrl: 'views/addexamtype.html',
         controller: 'MainCtrl'
       })
-    .state('/addsnippet', {
+    .state('addsnippet', {
         url: '/addsnippet',
         templateUrl: 'views/addsnippet.html',
         controller: 'MainCtrl'
       })
-    .state('/addflag', {
+    .state('addflag', {
         url: '/addflag',
         templateUrl: 'views/addflag.html',
         controller: 'MainCtrl'
       })
-    .state('/addsample', {
+    .state('addsample', {
         url: '/addsample',
         templateUrl: 'views/addsample.html',
         controller: 'MainCtrl'      
       })
-    .state('/addinstrument', {
+    .state('addinstrument', {
         url: '/addinstrument',
         templateUrl: 'views/addinstrument.html',
         controller: 'MainCtrl'
       })
-    .state('/addmethod', {
+    .state('addmethod', {
         url: '/addmethod',
         templateUrl: 'views/addmethod.html',
         controller: 'MainCtrl'

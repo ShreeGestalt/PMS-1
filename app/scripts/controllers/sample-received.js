@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:SampleReceivedCtrl
+ * @name pmsApp.controller:SampleReceivedCtrl
  * @description
  * # SampleReceivedCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('SampleReceivedCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

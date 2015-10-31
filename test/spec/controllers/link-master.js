@@ -3,7 +3,7 @@
 describe('Controller: LinkMasterCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('pmsappApp'));
+  beforeEach(module('pmsApp'));
 
   var LinkMasterCtrl,
     scope;

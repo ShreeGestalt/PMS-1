@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:BillMasterDetailViewCtrl
+ * @name pmsApp.controller:BillMasterDetailViewCtrl
  * @description
  * # BillMasterDetailViewCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('BillMasterDetailViewCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

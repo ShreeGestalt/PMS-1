@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:PmsReportsCtrl
+ * @name pmsApp.controller:PmsReportsCtrl
  * @description
  * # PmsReportsCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('PmsReportsCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

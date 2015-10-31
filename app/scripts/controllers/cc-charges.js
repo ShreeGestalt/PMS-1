@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:CcChargesCtrl
+ * @name pmsApp.controller:CcChargesCtrl
  * @description
  * # CcChargesCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('CcChargesCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

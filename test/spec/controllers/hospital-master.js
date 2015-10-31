@@ -3,7 +3,7 @@
 describe('Controller: HospitalMasterCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('pmsappApp'));
+  beforeEach(module('pmsApp'));
 
   var HospitalMasterCtrl,
     scope;

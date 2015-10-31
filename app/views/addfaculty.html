@@ -1,125 +1,84 @@
- <body>
-    <div class="col-md-12 col-md-offset-1">  
-       <form role="form">
-          <div class="row">
-          <center><h1>Add Faculty</h1></center>
-               <hr class="divider">        
-              <form role="form">
-                <div class="form-group">
-                  <label for="inputdefault">Faculty name</label>
-                  <input capitalize class="form-control input-sm" ng-model="group name" id="inputdefault" >
-                </div>
-              </form>
-                <hr class="divider">
-                    <button type="button" class="btn btn-primary">SUBMIT</button>                    
-                    <button type="button" class="btn btn-warning">RESET</button>
-                <hr class="divider">
+<div class="col-md-12 col-md-offset-1">  
+  <form role="form">
+    <div class="row">
+      <center><h1>Add Faculty</h1></center>
+      <hr class="divider">        
+      <form role="form">
+        <div class="form-group">
+          <label for="inputdefault">Faculty name</label>
+          <input capitalize class="form-control input-sm" ng-model="facultyName" id="inputdefault" >
+        </div>
+      </form>
+      <hr class="divider">
+      <button type="button" class="btn btn-primary">SUBMIT</button>                    
+      <button type="button" class="btn btn-warning">RESET</button>
+      <hr class="divider">
 
+      <div class="col-md-12 ">
+        <label>SEARCH</label>:
+        <select class="selectpicker">
+          <option>sample</option>
+          <option>ple</option>
+        </select>
+        <input type="text" name="testname" ng-model="test" required>
+        <label>VIEW PAGE NO.</label>:
+        <select class="selectpicker">
+          <option>sample</option>
+          <option>ple</option>
+        </select>
 
-
-                          <div class="col-md-12 ">
-                               <label>SEARCH</label>:
-                               <select class="selectpicker">
-                               <option>sample</option>
-                               <option>ple</option>
-                        </select>
-                        <input type="text" name="testname" ng-model="test" required>
-                              <label>VIEW PAGE NO.</label>:
-                              <select class="selectpicker">
-                              <option>sample</option>
-                              <option>ple</option>
-                              </select>
-
-                          <a href="">VIEW ALL PAGES</a>
-                           
-                          <label>RECORDS PER PAGE</label>:
-                          <select class="selectpicker">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                          </select>
+        <a href="">VIEW ALL PAGES</a>
+        <label>RECORDS PER PAGE</label>:
+        <select class="selectpicker">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
                 
-              <button type="button" class="btn btn-default">RESET</button>
-            </div>
-          </div>
-           </div>
-           
-
-
-           
-
+        <button type="button" class="btn btn-default">RESET</button>
+      </div>
+    </div>
+  </form>
+</div>
               
 <hr class="divider">
-
-            <div class="col-md-12 col-md-offset-1">
-
-               <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>FACULTY NAME</th>
-                <th>ACTION</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>example</td>
-                <td><a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a></td>                                
-            </tr>
-            <tr>
-                <td>example2</td>
-                <td><a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a></td>                
-            </tr>
-            <tr>
-                <td>example3</td>
-                <td><a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a></td>                
-            </tr>
-        </tbody>
-    </table>
-            </div><hr class="divider">
-                           <center>
-                                 <ul class="pagination">
-                                      <li><a href="#">1</a></li>
-                                      <li class="active"><a href="#">2</a></li>
-                                      <li><a href="#">3</a></li>
-                                      <li><a href="#">4</a></li>
-                                      <li><a href="#">5</a></li>
-                                 </ul>
-                           <center>
-          
-
-
-
-
-
-
-
-
-
-                          
-          </div>
-
-             
-             
-            
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-       </form>
-     </div>
- </body>
+<div class="col-md-12 col-md-offset-1">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>FACULTY NAME</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>example</td>
+        <td>
+          <a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a>
+        </td>                                
+      </tr>
+      <tr>
+        <td>example2</td>
+        <td>
+          <a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a>
+        </td>                
+      </tr>
+      <tr>
+        <td>example3</td>
+        <td>
+          <a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a>
+        </td>                
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr class="divider">
+<center>
+  <ul class="pagination">
+    <li><a href="#">1</a></li>
+    <li class="active"><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+  </ul>
+<center>

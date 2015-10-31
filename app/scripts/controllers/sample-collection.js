@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:SampleCollectionCtrl
+ * @name pmsApp.controller:SampleCollectionCtrl
  * @description
  * # SampleCollectionCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('SampleCollectionCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

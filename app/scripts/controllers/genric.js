@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:GenricCtrl
+ * @name pmsApp.controller:GenricCtrl
  * @description
  * # GenricCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
  
-angular.module('pmsappApp').controller('GenricCtrl', ['$scope', 'generic','genericService', 
+angular.module('pmsApp').controller('GenricCtrl', ['$scope', 'generic','genericService', 
                                       function ($scope, generic, genericService) {
     
     console.log('Hi This is loger');

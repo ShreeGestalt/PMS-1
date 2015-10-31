@@ -1,55 +1,41 @@
-
 <div class="generic">
   <h1>Generic</h1>
-<form>
-  <div class="form-group">
-    <label class="control-label">Select:</label>
-      
-       <div class="form-group">
-              <labal class="control-label" for="inputdefault"></label>
-                <select class="selectpicker form-control" ng-model="selectedItem" id="slct" ng-options="value.name for value in pmsdata track by value.id" ng-change="getSelectedCategoryData()">
+  <form>
+    <div class="form-group">
+      <label class="control-label">Select:</label>
+      <div class="form-group">
+        <select class="selectpicker form-control" ng-model="selectedItem" id="slct" ng-options="value.name for value in pmsdata track by value.id" ng-change="getSelectedCategoryData()">
                   
-                </select>
-              </div>
-
-
-
-  </div>
-
-
+        </select>
+      </div>
+    </div>
   
     <div class="form-group">
-	 <label class="control-label">Add {{selectedItem.name}}</label>
-    <input type="text"  class="form-control input" ng-model="gname">
-   
-  </div>
+      <label class="control-label">Add {{selectedItem.name}}</label>
+      <input type="text"  class="form-control input" ng-model="gname">
+    </div>
 
+    <div class="form-group">
+      <button type="button" class="btn btn-primary btn" ng-click="add()">Add</button>
+      <button type="button" class="btn btn-warning btn" type="reset" value="Reset">clear</button>
+    </div>
 
-<div class="form-group">
-	<button type="button" class="btn btn-primary btn" ng-click="add()">Add</button>
-  <button type="button" class="btn btn-warning btn" type="reset" value="Reset">clear</button>
-</div>
-
-
-
-<div  class="form-group">
-	<table  class="table table-bordered">
-  <thead>
-      <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>Category</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="val in pms">
-        <td>{{val.id}}</td>
-        <td>{{val.name}}</td>
-         </tr>
-    </tbody>
-  </table>
-
-  
-
- </form>
+    <div  class="form-group">
+      <table  class="table table-bordered">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="val in pms">
+            <td>{{val.id}}</td>
+            <td>{{val.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </form>
 </div>

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:ChangePinCtrl
+ * @name pmsApp.controller:ChangePinCtrl
  * @description
  * # ChangePinCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('ChangePinCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc service
- * @name pmsappApp.generic
+ * @name pmsApp.generic
  * @description
  * # generic
- * Service in the pmsappApp.
+ * Service in the pmsApp.
  */
 
-angular.module('pmsappApp').factory('generic',['$resource', function ($resource) {
+angular.module('pmsApp').factory('generic',['$resource', function ($resource) {
     return $resource('http://localhost:81/PMS-1/services/index.php/generics', {}, {
       query: {method:'GET', params: {} , isArray:false}
       

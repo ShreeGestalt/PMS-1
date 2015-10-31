@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:PmsAdministrationCtrl
+ * @name pmsApp.controller:PmsAdministrationCtrl
  * @description
  * # PmsAdministrationCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('PmsAdministrationCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

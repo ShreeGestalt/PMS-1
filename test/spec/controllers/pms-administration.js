@@ -3,7 +3,7 @@
 describe('Controller: PmsAdministrationCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('pmsappApp'));
+  beforeEach(module('pmsApp'));
 
   var PmsAdministrationCtrl,
     scope;

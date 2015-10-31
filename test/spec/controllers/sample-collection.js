@@ -3,7 +3,7 @@
 describe('Controller: SampleCollectionCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('pmsappApp'));
+  beforeEach(module('pmsApp'));
 
   var SampleCollectionCtrl,
     scope;

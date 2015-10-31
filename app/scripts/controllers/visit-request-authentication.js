@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:VisitRequestAuthenticationCtrl
+ * @name pmsApp.controller:VisitRequestAuthenticationCtrl
  * @description
  * # VisitRequestAuthenticationCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('VisitRequestAuthenticationCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

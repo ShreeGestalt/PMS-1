@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:TestMasterDetailsCtrl
+ * @name pmsApp.controller:TestMasterDetailsCtrl
  * @description
  * # TestMasterDetailsCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp').controller('TestMasterDetailsCtrl',['$scope', '$http','Addtest',
+angular.module('pmsApp').controller('TestMasterDetailsCtrl',['$scope', '$http','Addtest',
 							function ($scope,$http,Addtest) {
     /*$scope.add=function(val1) {
         var userVal = val1;

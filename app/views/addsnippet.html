@@ -1,71 +1,73 @@
- <body>
-    <div class="col-md-12 col-md-offset-1">  
-       <form role="form">
-          <div class="row">
-          <center><h1>Add snippet</h1></center>
-               <hr class="divider">        
-              <form role="form">
-                <div class="form-group">
-                  <label for="inputdefault">Snippet name</label>
-                  <input capitalize class="form-control input-sm" ng-model="group name" id="inputdefault" >
-                </div>
-              </form>
-                <hr class="divider">
-                    <button type="button" class="btn btn-primary">SUBMIT</button>                    
-                    <button type="button" class="btn btn-warning">RESET</button>
-                <hr class="divider">
+<div class="col-md-12 col-md-offset-1">  
+  <form role="form">
+    <div class="row">
+      <center><h1>Add snippet</h1></center>
+      <hr class="divider">        
+      <form role="form">
+        <div class="form-group">
+          <label for="inputdefault">Snippet name</label>
+          <input capitalize class="form-control input-sm" ng-model="snippetName" id="inputdefault" >
+        </div>
+      </form>
+      <hr class="divider">
+      <button type="button" class="btn btn-primary">SUBMIT</button>                    
+      <button type="button" class="btn btn-warning">RESET</button>
+      <hr class="divider">
+    </div>
+  </form>
+</div>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>SNIPPET</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="success">
+        <td>staff</td>
+        <td><a class="btn mini blue-stripe" href="{site_url()}admin/editFront/1">Edit</a></td>
+        <td><a href="#" class="confirm-delete btn mini red-stripe" role="button" data-title="johnny" data-id="1">Delete</a></td>
+      </tr>
+      <tr class="danger"></tr>
+      <tr class="info"></tr>
+    </tbody>
+  </table>
+</div>
 
 
-
-                         
-          </div>
-           </div>
-             <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                  <tr>
-                        <th>SNIPPET</th>
-                        <th>ACTION</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr class="success">
-                        <td>staff</td>
-                        <td><a class="btn mini blue-stripe" href="{site_url()}admin/editFront/1">Edit</a></td>
-                        <td><a href="#" class="confirm-delete btn mini red-stripe" role="button" data-title="johnny" data-id="1">Delete</a></td>
-                  </tr>
-                      <tr class="danger"></tr>
-                      <tr class="info"></tr>
-                  </tbody>
-                </table>
-                </form>
-            </div>
-
-
-            <div class="col-md-12 col-md-offset-1">
-
-               <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>SNIPPET</th>
-                <th>ACTION</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>example1</td>
-                <td><a href="#"  <span class="glyphicon glyphicon-upload" data-toggle="tooltip" data-placement="top" title="UPDATE"></a>
-                <a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a></td>                                
-            </tr>
-            <tr>
-                <td>example2</td>
-                <td>
-                <a href="#"  <span class="glyphicon glyphicon-upload" data-toggle="tooltip" data-placement="top" title="UPDATE"></a>
-                <a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a></td>                
-            </tr>
-            <tr>
-                <td>example3</td>
-                <td>
-                <a href="#"  <span class="glyphicon glyphicon-upload" data-toggle="tooltip" data-placement="top" title="UPDATE"></a>
-                <a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a></td>                
+<div class="col-md-12 col-md-offset-1">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>SNIPPET</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>example1</td>
+        <td>
+          <a href="#"  <span class="glyphicon glyphicon-upload" data-toggle="tooltip" data-placement="top" title="UPDATE"></a>
+          <a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a>
+        </td>                                
+      </tr>
+      <tr>
+        <td>example2</td>
+        <td>
+          <a href="#"  <span class="glyphicon glyphicon-upload" data-toggle="tooltip" data-placement="top" title="UPDATE"></a>
+          <a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a>
+        </td>                
+      </tr>
+      <tr>
+        <td>example3</td>
+        <td>
+          <a href="#"  <span class="glyphicon glyphicon-upload" data-toggle="tooltip" data-placement="top" title="UPDATE"></a>
+          <a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a></td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>                

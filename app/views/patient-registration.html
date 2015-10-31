@@ -1,282 +1,229 @@
 <div class="patient-registration">
   <h1>Patient Registration</h1> 
-    <form role="form">
-      <div class="row">
-        <div class="col-md-4">
-           <button type="button" class="btn btn-primary btn-block" ng-model="newpatient">New Patient</button>
-            <button type="button" class="btn btn-success btn-block" ng-model="oldpatient">Old Patient</button>
-              <h5><span class="label label-default">Modify Report</span></h5>
-               <div class="row">
-                <div class="col-md-4">
-                  <label class="control-label">Date</label>
-                </div>
-                  <div class="col-md-6">
-                    <input type="text" ng-model="date" class="form-control input-sm">
-                  </div>
-              </div>
-          
-
-        </div>
-
-  <div class="col-md-4">
+  <form role="form">
     <div class="row">
       <div class="col-md-4">
-        <label class="control-label">Lab No</label>
-      </div>
-        <div class="col-md-6">
-          <input type="text" ng-model="labno" class="form-control input-sm">
-        </div>
-    </div>
-    
-<div class="row">
-      <div class="col-md-4">
-        <label class="control-label">Patient Id</label>
-      </div>
-        <div class="col-md-6">
-          <input type="text" ng-model="pid" class="form-control input-sm">
-        </div>
-    </div>
-
- 
-<div class="row">
-      <div class="col-md-4">
-        <label class="control-label">Barcode</label>
-      </div>
-        <div class="col-md-6">
-          <input type="text" ng-model="barcode" class="form-control input-sm">
-        </div>
-    </div>
-
-<div class="row">
-   <div class="form-group">
-      <div class="col-md-4">
-        <label class="control-label">count</label>
-      </div>
-        <div class="col-md-3">
-          <input type="text" ng-model="count" class="form-control input-sm">
-        </div>
-        <div class="col-md-5">
-           <button type="button" class="btn btn-primary btn-xs" ng-model="print">Print</button>
-          <span class="glyphicons glyphicons-print"></span>
-        </div>
-
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-  </div>
-
-
-
-<div class="col-md-4">
-   <div class="form-group">
-    <div class="row">
-      <div class="col-md-3">
-      <label class="control-label">Date</label>
-      </div>
-      <div class="col-md-6">
-        <input type="text" ng-model="date" class="form-control input-sm">
-      </div>
-  </div>
-</div>
-
-       <div class="form-group">
+        <button type="button" class="btn btn-primary btn-block" ng-model="newpatient">New Patient</button>
+        <button type="button" class="btn btn-success btn-block" ng-model="oldpatient">Old Patient</button>
+        <h5><span class="label label-default">Modify Report</span></h5>
         <div class="row">
           <div class="col-md-4">
-            <label class="control-label">Patient Name</label>
+            <label class="control-label">Date</label>
           </div>
+          <div class="col-md-6">
+            <input type="text" ng-model="date" class="form-control input-sm">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4">
+              <label class="control-label">Lab No</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" ng-model="labno" class="form-control input-sm">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="form-group">
+            <div class="col-md-4">
+              <label class="control-label">Patient Id</label>
+             </div>
+          <div class="col-md-6">
+            <input type="text" ng-model="pid" class="form-control input-sm">
+          </div>
+        </div>
+      </div>
+
+
+
+        <div class="row">
+          <div class="form-group">
+            <div class="col-md-4">
+              <label class="control-label">Barcode</label>
+             </div>
+          <div class="col-md-6">
+            <input type="text" ng-model="barcode" class="form-control input-sm">
+          </div>
+        </div>
+      </div>
+
+
+        <div class="row">
+          <div class="form-group">
+            <div class="col-md-4">
+              <label class="control-label">count</label>
+            </div>
+            <div class="col-md-4">
+              <input type="text" ng-model="count" class="form-control input-sm">
+            </div>
+            <div class="form-group">
+              <div class="col-md-4">
+              <button type="button" class="btn btn-primary btn-xs" ng-model="print">Print</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-3">
+              <label class="control-label">Date</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" ng-model="date" class="form-control input-sm">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4">
+              <label class="control-label">Patient Name</label>
+            </div>
             <div class="col-md-8">
               <input type="text" ng-model="pname" class="form-control input-sm">
             </div>
-        </div>
-      </div>
-
-           
-  <h5><span class="label label-default">Reffered By</span></h5>
-
-    <div class="form-group">
-        <div class="row">
-          <div class="col-md-5">
-            <label class="control-label">Hospital</label>
           </div>
+        </div>
+           
+        <h5><span class="label label-default">Reffered By</span></h5>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-5">
+              <label class="control-label">Hospital</label>
+            </div>
             <div class="col-md-4">
                <select class="selectpicker" ng-model="hospital" id="hosp" ng-click="">
-           <option>MR</option>
-          </select>
-          </div>
+                <option>MR</option>
+              </select>
+            </div>
             <div class="col-md-3">
                <button type="button" class="btn btn-primary btn-xs">Add New</button>
             </div>
+          </div>
         </div>
-      </div>
 
-
-
-
-  <div class="form-group">
-        <div class="row">
-          <div class="col-md-5">
-            <label class="control-label">Consultant</label>
-          </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-5">
+              <label class="control-label">Consultant</label>
+            </div>
             <div class="col-md-4">
-               <select class="selectpicker" ng-model="consultant" id="pid">
-           <option>MR</option>
-          </select>
-          </div>
+              <select class="selectpicker" ng-model="consultant" id="pid">
+                <option>MR</option>
+              </select>
+            </div>
             <div class="col-md-3">
                <button type="button" class="btn btn-primary btn-xs" ng-click="">Add New</button>
             </div>
+          </div>
         </div>
       </div>
 
-
-
-
-
-
-
-
-</div>
-  
-  
-
-
-        <div class="col-md-3">
-          <div class="row">
-           <label class="control-label">Search report by patient name/id</label>
-           <input type="text" ng-model="search" class="form-control input-sm">
-           <textarea class="form-control" rows="10" id="searchresult" ng-model="result"></textarea>
-         </div>
-           <div class="form-group">
-            <div class="row">
-              <button type="button" class="btn btn-success" ng-click="newpatient">Done</button>
-                <button type="button" class="btn btn-danger" ng-click="oldpatient">Cancel</button>
-            </div>
-          </div>
-       
-
-
-
-
-
-
+      <div class="col-md-3">
+        <div class="row">
+          <label class="control-label">Search report by patient name/id</label>
+          <input type="text" ng-model="search" class="form-control input-sm">
+          <textarea class="form-control" rows="10" id="searchresult" ng-model="result"></textarea>
         </div>
-
-
-
+        <div class="form-group">
+          <div class="row">
+            <button type="button" class="btn btn-success" ng-click="newpatient">Done</button>
+            <button type="button" class="btn btn-danger" ng-click="oldpatient">Cancel</button>
+          </div>
+        </div>
+      </div>
   
-  <div class="col-md-6">
-    <h5><span class="label label-default">Search By</span></h5>
-   
-      <label class="control-label">Test</label>
+      <div class="col-md-6">
+        <h5><span class="label label-default">Search By</span></h5>
+        <label class="control-label">Test</label>
         <select class="selectpicker" ng-model="test" id="pid">
-           <option>MR</option>
-          </select>
+          <option>MR</option>
+        </select>
         
         <label class="control-label">Profile</label>
         <select class="selectpicker" ng-model="profile" id="pid">
-           <option>MR</option>
+          <option>MR</option>
+        </select>
+        
+        <div class="form-group">
+          <h5><span class="label label-default">Lab Order</span></h5> 
+          <label>
+            <input type="radio" id="q128" name="quality[21]" value="1" ng-model="tst" />Test
+          </label> 
+          
+          <label>
+            <input type="radio" id="q129" name="quality[21]" checked="checked" value="2" ng-model="profile" />Profile
+          </label> 
+          
+          <label>
+            <input type="radio" id="q130" name="quality[21]" value="3" ng-model="dsptst" />Discriptive Test
+          </label> 
+        </div>
+        
+        <div class="form-group">
+          <select class="selectpicker form-control" >
+            <option>example</option>
           </select>
-       <div class="form-group">
+        </div>
 
-        <h5><span class="label label-default">Lab Order</span></h5> 
+        <div class="form-group">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Test</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="form-group">
+          <label class="control-label">Amount</label>
+          <input type="text" ng-model="amount" class="form-control input-sm">
+          <button type="button" class="btn btn-primary btn-xs" ng-click="">Insert</button>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Total</label>
+          <input type="text" ng-model="total" class="form-control input-sm">
+        </div>
         
-                <label >
-                    <input type="radio" id="q128" name="quality[21]" value="1" ng-model="tst" />Test
-                </label> 
-                <label >
-                    <input type="radio" id="q129" name="quality[21]" checked="checked" value="2" ng-model="profile" />Profile
-                </label> 
-                <label >
-                    <input type="radio" id="q130" name="quality[21]" value="3" ng-model="dsptst" />Discriptive Test
-                </label> 
-              <label class="control-label"></label>
-            </div>
-            <div class="form-group">
-              <labal class="control-label" for="inputdefault"></label>
-                <select class="selectpicker form-control" >
-                  <option>example</option>
-                </select>
-              </div>
+        <div class="form-group">
+          <label class="control-label">Paid</label>
+          <input type="text" ng-model="paid" class="form-control input-sm">
+        </div>
 
-<div class="form-group">
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Test</th>
-        <th>Amount</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-       </tbody>
-  </table>
-  </div>
-           
+        <div class="form-group">
+          <label class="control-label">Discount</label>
+          <input type="text" ng-model="discount" class="form-control input-sm">
+          <button type="button" class="btn btn-success btn-sm">Receipt</button>
+        </div>
         
-    
-     
-
-
+        <div class="form-group">
+          <button type="button" class="btn btn-info btn-sm">Done</button>
+          <button type="button" class="btn btn-warning btn-sm">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
-
-
-<div class="col-md-2">
-  
-    <div class="form-group">
-     <label class="control-label">Amount</label>
-     <input type="text" ng-model="amount" class="form-control input-sm">
-        <button type="button" class="btn btn-primary btn-xs" ng-click="">Insert</button>
-
-   </div>
-
-
-
-   <div class="form-group">
-     <label class="control-label">Total</label>
-     <input type="text" ng-model="total" class="form-control input-sm">
-   </div>
-  <div class="form-group">
-     <label class="control-label">Paid</label>
-     <input type="text" ng-model="paid" class="form-control input-sm">
-   </div>
-
-    <div class="form-group">
-     <label class="control-label">Discount</label>
-     <input type="text" ng-model="discount" class="form-control input-sm">
-     <button type="button" class="btn btn-success btn-sm">Receipt</button>
-   </div>
-
-
-<div class="form-group">
-  
- 
- <button type="button" class="btn btn-info btn-sm">Done</button>
- <button type="button" class="btn btn-warning btn-sm">Cancel</button>
-
-</div>
- </div>
-</form>
-</div>
-

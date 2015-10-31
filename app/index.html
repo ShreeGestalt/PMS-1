@@ -16,65 +16,23 @@
     <link rel="stylesheet" href="styles/custom.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="pmsappApp">
+  <body ng-app="pmsApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">pmsapp</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-
-              <li><a ng-href="#/genric">genric</a></li>
-
-              <li><a ng-href="#/descriptive test">descriptive test</a></li>
-              <li><a ng-href="#/addgroup">addgroup</a></li>
-              <li><a ng-href="#/addemployeecategory">addemployeecategory</a></li>
-              <li><a ng-href="#/addfaculty">addfaculty</a></li>
-              <li><a ng-href="#/testmaster">testmaster</a></li>
-              <li><a ng-href="#/addcontactcategory">addcontactcategory</a></li>
-              <li><a ng-href="#/addexamtype">addexamtype</a></li>
-              <li><a ng-href="#/addsnippet">addsnippet</a></li>
-              <li><a ng-href="#/addflag">addflag</a></li>
-              <li><a ng-href="#/addsample">addsample</a></li>
-              <li><a ng-href="#/addinstrument">addinstrument</a></li>
-              <li><a ng-href="#/addmethod">addmethod</a></li>
-              <li><a ng-href="#/patient-master">patient master</a></li>
-              <li><a ng-href="#/patient-registration">patient registration</a></li>S
-            </ul>
-          </div>
-        </div>
+      <div id="wrapper" class="container">
+         <header class="header">
+           <pms-navigation-dir></pms-navigation-dir>
+          </header>
+          <!-- Body Portion-->
+         <div ui-view></div>
+             <!-- Footer Portion -->
+         <pms-footer-dir></pms-footer-dir>
       </div>
-    </div>
-
-    <div class="container">
-    <div ui-view></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> PMS </p>
-      </div>
-    </div>
+    
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -108,15 +66,10 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <!-- Controllers -->
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-		
         <script src="scripts/controllers/genric.js"></script>
-        <script src="scripts/services/generic.js"></script>
-        <script src="scripts/services/genericcat.js"></script>
-
-        <script src="scripts/services/myservice.js"></script>
-        <script src="scripts/services/api-url.js"></script>
         <script src="scripts/controllers/link-master.js"></script>
         <script src="scripts/controllers/flag-master.js"></script>
         <script src="scripts/controllers/patient-master.js"></script>
@@ -145,13 +98,22 @@
         <script src="scripts/controllers/pms-reports.js"></script>
         <script src="scripts/controllers/change-pin.js"></script>
         <script src="scripts/controllers/entire-test.js"></script>
-
-        
+        <!-- Services-->
+        <script src="scripts/services/generic.js"></script>
+        <script src="scripts/services/genericcat.js"></script>
+        <script src="scripts/services/myservice.js"></script>
+        <script src="scripts/services/api-url.js"></script>
         <script src="scripts/services/addtest.js"></script>
+        <!-- Directives -->
+         <script src="scripts/directives/navigationdir.js"></script>
+        <script src="scripts/directives/footerdir.js"></script>
+
 
         <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
        <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
        <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+       
+        <script src="scripts/controllers/login.js"></script>
         <!-- endbuild -->
 </body>
 </html>

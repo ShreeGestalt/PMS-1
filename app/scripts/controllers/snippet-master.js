@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name pmsappApp.controller:SnippetMasterCtrl
+ * @name pmsApp.controller:SnippetMasterCtrl
  * @description
  * # SnippetMasterCtrl
- * Controller of the pmsappApp
+ * Controller of the pmsApp
  */
-angular.module('pmsappApp')
+angular.module('pmsApp')
   .controller('SnippetMasterCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

@@ -17,7 +17,7 @@ class Generics extends CosRestController
     //$this->db->select('csAboutMe AS aboutMe');
      $this->db->distinct();
     $this->db->order_by("generic_NAme", "asc");
-    $this->response(array("data" => $this->db->get('genericmaster')->result()));  //cosUsers
+    $this->response(array("data" => $this->db->get('generic_category')->result()));  //cosUsers
   }
 
   /*public function index_post()

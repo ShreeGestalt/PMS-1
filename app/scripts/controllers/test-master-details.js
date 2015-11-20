@@ -21,7 +21,7 @@ angular.module('pmsApp').controller('TestMasterDetailsCtrl',['$scope', '$http','
     		{name: 'smpl'},
     		{name: 'instrument'},
     		{name: 'charges'},
-            { name: 'Action', enableCellEdit: false, cellTemplate:'<button class="btn primary" ng-click="grid.appScope.deleteRecord(row.entity.category_id,row.entity.generic_id)"><span class="glyphicon glyphicon-pencil"></span></button>'}
+            { name: 'Action', enableCellEdit: false, cellTemplate:'<button class="btn primary" ng-click="grid.appScope.deleteRecord(row.entity.category_id,row.entity.generic_id)"><span class="glyphicon glyphicon-trash"></span></button>'}
     	]
     };
     function init() {
@@ -73,6 +73,19 @@ angular.module('pmsApp').controller('TestMasterDetailsCtrl',['$scope', '$http','
     addtestDropdown.flag.get({}, function (record){
       $scope.flag = record.data;
     });
+
+     $scope.deleteRecord = function(deleteData){
+    var removeData = {
+      
+
+    }
+    
+    Addtest.remove(angular.toJson(removeData), function(responce) {
+      console.log(responce);
+    });
+  };
+
+
 
 
 }]);

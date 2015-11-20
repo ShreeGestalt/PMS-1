@@ -64,7 +64,84 @@ angular.module('pmsApp')
 
        patientMaster.patient.get(function(record) {
         $scope.patientinfo.data = record.data;
-      });   
+      });
+
+    $scope.gridOptions = {
+    enableFiltering: false,
+    onRegisterApi: function(gridApi){
+      $scope.gridApi = gridApi;
+      $scope.gridApi.grid.registerRowsProcessor( $scope.singleFilter, 200 );
+    },
+    paginationPageSizes: [25, 50, 75],
+    paginationPageSize: 25,
+    columnDefs: [
+      { name: 'id', displayName: 'id' },
+      { name: 'name', displayName: 'Name' },
+      { name: 'address', displayName: 'address' },
+      { name: 'city', displayName: 'city' },
+      { name: 'dob', displayName: 'dob' },
+      { name: 'gender', displayName: 'gender' },
+      { name: 'mobile', displayName: 'mobile' },
+      { name: 'email', displayName: 'email' },
+      { name: 'Action', enableCellEdit: false, cellTemplate:'<button class="btn primary" ng-click="grid.appScope.deleteRecord(row.entity)"><span class="glyphicon glyphicon-trash"></span></button>'}
+    ]
+  };
+
+  $scope.filter = function() {
+    console.log($scope.filterValue);
+    console.log("in filter function");
+    $scope.gridApi.grid.refresh();
+  };
+
+ 
+  patientMaster.patient.get(function (data){
+      $scope.gridOptions.data = data.data;
+    });
+
+
+  $scope.gridOptions.onRegisterApi = function(gridApi){
+    //set gridApi on scope
+    $scope.gridApi = gridApi;
+    gridApi.rowEdit.on.saveRow($scope, $scope.saveRow);
+  };
+
+
+  $scope.deleteRecord = function(deleteData){
+    var removeData = {
+      patientId: deleteData.id,
+      status: 'delete',
+    }
+    
+    patientMaster.patient.save(angular.toJson(removeData), function(responce) {
+      console.log(responce);
+    });
+  };
+
+  $scope.saveRow = function(rowEntity) {
+    patientMaster.patient.save(angular.toJson(rowEntity), function(responce) {
+      $scope.gridOptions = responce.data[0];
+    });
+    
+  };
+
+  $scope.singleFilter = function( renderableRows ){
+    console.log("in single filter");
+    var matcher = new RegExp($scope.filterValue);
+    renderableRows.forEach( function( row ) {
+      var match = false;
+      [ 'id', 'name', 'address', 'city', 'dob', 'gender', 'mobile', 'email','Action' ].forEach(function( field ){
+        if ( row.entity[field].match(matcher) ){
+          match = true;
+        }
+      });
+      if ( !match ){
+        row.visible = false;
+      }
+    });
+    return renderableRows;
+  };
+
+     
     }
 
     
@@ -75,6 +152,12 @@ angular.module('pmsApp')
     patientMaster.districts.get({}, function (record){
       $scope.districts = record.data;
     }); */
+
+    
+  
+ 
+   
+
 
     
   }]);

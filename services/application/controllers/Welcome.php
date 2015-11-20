@@ -26,7 +26,7 @@ class Welcome extends REST_Controller {
 		$query = $this->db->get('course');
 		
 		$this->load->model(array('user_model'));
-$data = $this->user_model->getAll();
-$this->output->set_content_type('application/json')->set_output(json_encode($data));
+		$data = $this->user_model->getAll();					
+		$this->output->set_content_type('application/json')->set_output(json_encode($data));
 	}
 }

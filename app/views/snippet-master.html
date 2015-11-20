@@ -1,1 +1,22 @@
-<p>This is the snippet-master view.</p>
+<div class="snippet-master">
+  <h3>Snippet master</h3>
+  <form name="sm" ng-submit="submitForm()">                          
+    <div class="form-group">            
+      <label class="control-label" for="inputdefault">Short form:</label>
+      <input capitalize class="form-control" ng-model="snippet.short_code" id="inputdefault" type="text">
+      <span style="color:red" ng-show="sm.short_code.$dirty && sm.short_code.$invalid">
+        <span ng-show="sm.short_code.$error.required">shortform is required.</span>
+      </span>
+    </div>
+    <div class="form-group"> 
+          <label>Description</label>
+          <textarea class="form-control ng-pristine ng-valid ng-touched" rows="10" id="searchresult" ng-model="snippet.description" aria-multiline="true" aria-invalid="false" style=""></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-info">Update</button>
+    <button type="button" class="btn btn-danger">Delete</button>
+  </div>
+</form> 
+<div ui-grid="myData" class="myGrid"></div> <!-- Grid -->
+</div>                            
+

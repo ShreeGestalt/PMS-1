@@ -14,6 +14,9 @@ angular.module('pmsApp')
       replace: true,
       link: function postLink() {
         //element.text('this is the navigationDir directive');
+      },
+      controller: function($scope) {
+        $scope.isLogin = false;
       }
     };
   });

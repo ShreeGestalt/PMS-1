@@ -1,1 +1,20 @@
-<p>This is the flag-master view.</p>
+<div class="flag_master"> 
+    <form name="flag" ng-submit="addFlag()">
+        <center><h3>ADD FLAG</h3></center>      
+          <div class="form-group">
+            <label for="inputdefault">FLAG NAME</label>
+            <input capitalize class="form-control input-sm" ng-model="flag.name" id="inputdefault" >
+          </div>
+          <div class="form-group">
+            <label for="inputdefault">PERCENT</label>
+            <input capitalize class="form-control input-sm" input type="number" ng-model="flag.percent" id="inputdefault" >
+          </div>
+          <div class="form-group">
+            <label for="inputdefault">AMOUNT</label>
+            <input capitalize class="form-control input-sm" input type="number" ng-model="flag.amount" id="inputdefault" >
+          </div>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>                    
+        <button type="button" class="btn btn-warning">RESET</button>
+    </form>
+	<div ui-grid="myData" class="myGrid"></div><!-- Grid -->
+</div>

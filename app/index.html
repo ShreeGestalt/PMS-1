@@ -5,6 +5,9 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <!-- build:remove -->
+     <link id="apiRoot" href="http://localhost/PMS-1/"/>
+    <!-- endbuild -->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -14,6 +17,9 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/custom.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="less/style.less" title="lessCss" id="lessCss">
+
     <!-- endbuild -->
   </head>
   <body ng-app="pmsApp">
@@ -23,14 +29,25 @@
 
     <!-- Add your site or application content here -->
 
-      <div id="wrapper" class="container">
-         <header class="header">
+      <div id="wrapper">
+         <!-- <header class="header"> -->
            <pms-navigation-dir></pms-navigation-dir>
-          </header>
+          <!-- </header> -->
           <!-- Body Portion-->
-         <div ui-view></div>
-             <!-- Footer Portion -->
-         <pms-footer-dir></pms-footer-dir>
+          <div class="box-holder">
+            <div class="left-sidebar">
+              <left-navigation-dir></left-navigation-dir>
+            </div>
+            <div class="content">
+              <div class="row">
+                <div class="col-mod-12">
+                  <div ui-view></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Footer Portion -->
+          <!-- <pms-footer-dir></pms-footer-dir> -->
       </div>
     
 
@@ -61,10 +78,14 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="bower_components/pdfmake/index.js"></script>
+    <script src="bower_components/vfs_fonts/index.js"></script>
+    <script src="bower_components/CSV-JS/csv.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="js/less-1.5.0.min.js"></script>
         <script src="scripts/app.js"></script>
         <!-- Controllers -->
         <script src="scripts/controllers/main.js"></script>
@@ -98,22 +119,21 @@
         <script src="scripts/controllers/pms-reports.js"></script>
         <script src="scripts/controllers/change-pin.js"></script>
         <script src="scripts/controllers/entire-test.js"></script>
-        <!-- Services-->
-        <script src="scripts/services/generic.js"></script>
         <script src="scripts/services/genericcat.js"></script>
         <script src="scripts/services/myservice.js"></script>
         <script src="scripts/services/api-url.js"></script>
         <script src="scripts/services/addtest.js"></script>
         <!-- Directives -->
          <script src="scripts/directives/navigationdir.js"></script>
+         <script src="scripts/directives/leftnavigationdir.js"></script>
         <script src="scripts/directives/footerdir.js"></script>
 
-
-        <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
-       <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
-       <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
-       
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/services/addtest-dropdown.js"></script>
+        <script src="scripts/services/snippet.js"></script>
+        <script src="scripts/services/flagservice.js"></script>
+        <script src="scripts/services/patient-master.js"></script>
+        <script src="scripts/services/loginservice.js"></script>
         <!-- endbuild -->
-</body>
+  </body>
 </html>

@@ -1,1 +1,119 @@
-<p>This is the cc-charges view.</p>
+<div class="cc-charges">
+    <div class="col-md-12">
+        <h3>CC-charges</h3>
+            <div class="row">
+                	<div class="col-md-12">    
+			            	<label  class="control-label" for="inputdefault"><h3><span class="label label-info">collection centre</span></h3></label>
+			            	</div>
+			            	<div class="col-md-11" ng-model="ccname">
+							 	<select class="selectpicker form-control" ng-model="selecteditem" ng-options="item.area for item in items"> 
+								
+							 </select>
+					       </div>
+					    </div>
+					    <hr class="divider">
+					    
+					     <div class="col-md-11"> <!-- third division -->
+                    
+		                      <form group="inline">
+		                       <div class="table-responsive" id="content" ng-show="selecteditem">
+		                       <table id="myTable" class="display table table-bordered table-striped" width="100%" >
+
+
+							        <thead>  
+							          <tr>  
+							            <th>TEST</th>  
+							            <th>LAB CHARGES</th>  
+							            <th>CENTER CHARGES</th>  
+							            <th>BILL CHARGES</th> 
+							            
+							          </tr>  
+							        </thead>  
+							        <tbody>  
+							          <tr>  
+							            <td>URINE</td>  
+							            <td>440</td>  
+							            <td><input class="form-control" id="focusedInput"  ng-model="sub.cenreharges1" type="number" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges23" type="number" value="enter bill charges"></td>  
+							          </tr>  
+							          <tr>  
+							            <td>BLOOD</td>  
+							            <td>790</td>  
+							            <td><input class="form-control" id="focusedInput" 
+							           ng-model="sub.cenreharges2" type="number" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" type="number" ng-model="sub.centreharges22"value="enter bill charges"></td>  
+							          </tr>  
+							          <tr>  
+							            <td>HEART</td>  
+							            <td>1100</td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges3" type="number" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges21" type="number" value="enter bill charges"></td>  
+							          </tr>  
+							           <tr>  
+							            <td>TYPHOID</td>  
+							            <td>800</td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges4" type="number" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges20"type="number" value="enter bill charges"></td>  
+							          </tr>  
+							          <tr>  
+							            <td>SUGAR</td>  
+							            <td>500</td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges5" type="number" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" type="number" ng-model="sub.centreharges19" value="enter bill charges"></td>  
+							          </tr>  
+							          <tr>  
+							            <td>BLOOD</td>  
+							            <td>400</td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges6" type="number" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges18" type="number" value="enter
+							            bill charges"></td>  
+							          </tr>  
+							          
+							           <tr>  
+							            <td>URINE</td>  
+							            <td>500</td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges6" type="text" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" type="text" ng-model="sub.centreharges17" value="enter 
+							            bill charges"></td>  
+							          </tr>  
+							          <tr>  
+							            <td>TYPHOID</td>  
+							            <td>500</td>  
+							            <td><input class="form-control" id="focusedInput"  ng-model="sub.centreharges7" type="number" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges16" type="number" value="enter
+							            bill charges"></td>  
+							          </tr>  
+							          <tr>  
+							            <td>SUGAR</td>  
+							            <td>1000</td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges8" type="number" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges15" type="number" value="enter
+							            bill charges"></td>  
+							          </tr>  
+							          
+							            <tr>  
+							            <td>TYPHOID</td>  
+							            <td>900</td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges9" type="number" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges14" type="number" value="enter
+							            bill charges"></td>  
+							          </tr>  
+							          <tr>  
+							            <td>TYPHOID</td>  
+							            <td>400</td>  
+							            <td><input class="form-control" id="focusedInput" type="number" ng-model="sub.centreharges10" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges13" type="number" value="enter bill charges"></td>  
+							          </tr>  
+							          <tr>  
+							            <td>BLOOD</td>  
+							            <td>500</td>  
+							            <td><input class="form-control" id="focusedInput" type="number" ng-model="sub.centreharges11" value="enter charges"></td>  
+							            <td><input class="form-control" id="focusedInput" ng-model="sub.centreharges12" type="number" value="enter bill charges"></td>  
+							          </tr>  
+							        </tbody>
+
+							      </table> <button type="button" class="btn btn-primary btn-sm ng-click="add(sub)"">SUBMIT</button> 
+      
+       </div> </form></div></div></div>
+    </div>	
+</div>

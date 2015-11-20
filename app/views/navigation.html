@@ -1,50 +1,149 @@
-<div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+<div>
+  <nav class="navbar" role="navigation">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><i class="fa fa-list btn-nav-toggle-responsive text-white"></i> <span class="logo">Cas<strong>ca</strong>de <i class="fa fa-bookmark"></i></span></a>
+    </div>
 
-            <a class="navbar-brand" href="#/">pmsapp</a>
-          </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav user-menu navbar-right" ng-if="isLogin">
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li ui-sref-active="active">
-                  <a ui-sref="main">Home</a>
-              <li ui-sref-active="active">
-                <a ui-sref="genric">genric</a>
+        <li><a href="#" class="user dropdown-toggle" data-toggle="dropdown"><span class="username"><img src="images/profiles/eleven.png" class="user-avatar" alt="">  Vijay Kumar </span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><span class="glyphicon glyphicon-envelope-user"></span> My Profile</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Inbox</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-envelope-cogs"></span> Settings</a></li>
+            <li class="divider"></li>
+            <li><a href="#" class="text-danger"><span class="glyphicon glyphicon-envelope-lock"></span> Logout</a></li>
+          </ul>
+          <li><a href="#" class="settings dropdown-toggle" data-toggle="dropdown"><span class="fa fa-envelope"></span><span class="badge bg-pink">4</span></a>
+            <ul class="dropdown-menu inbox">
+              <li>
+                <a href="inbox.php">     
+                  <img src="images/profiles/three.png" alt="" class="avatar">
+                  <div class="message">
+                    <span class="username">John Deo</span> 
+                    <span class="mini-details">(6) <span class="fa fa-paper-clip"></span></span>
+                    <span class="time pull-right"> <span class="fa fa-clock-o"></span> 06:58 PM</span>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ... </p>
+                  </div>
+                </a>
               </li>
-              <li ui-sref-active="active">
-                <a ui-sref="login">Login</a>
+              <li>
+                <a href="inbox.php">     
+                  <img src="images/profiles/four.png" alt="" class="avatar">
+                  <div class="message">
+                    <span class="username">Jane Deo</span> 
+                    <span class="mini-details">(6) <i class="fa fa-paper-clip"></i></span>
+                    <span class="time pull-right"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ... </p>
+                  </div>
+                </a>
               </li>
-              <li ui-sref-active="active">
-                <a ui-sref="descriptive-test">descriptive test</a>
+              <li>
+                <a href="inbox.php">     
+                  <img src="images/profiles/five.png" alt="" class="avatar">
+                  <div class="message">
+                    <span class="username">Mr Deo</span> 
+                    <span class="mini-details">(6) <i class="fa fa-paper-clip"></i></span>
+                    <span class="time pull-right"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ... </p>
+                  </div>
+                </a>
               </li>
-              <li ui-sref-active="active">
-                <a ui-sref="testmaster">testmaster</a>
+              <li>
+                <a href="inbox.php">     
+                  <img src="images/profiles/six.png" alt="" class="avatar">
+                  <div class="message">
+                    <span class="username">Miss Deo</span> 
+                    <span class="mini-details">(6) <i class="fa fa-paper-clip"></i></span>
+                    <span class="time pull-right"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ... </p>
+                  </div>
+                </a>
               </li>
-              <li ui-sref-active="active">
-                <a ui-sref="addsnippet">addsnippet</a>
-              </li>
-              <li ui-sref-active="active">
-                <a ui-sref="addflag">addflag</a>
-              </li>
-              <li ui-sref-active="active">
-                <a ui-sref="patient-master">patient master</a>
-              </li>
-              <li ui-sref-active="active">
-                <a ui-sref="patient-registration">patient registration</a>
-              </li>
-              <li ui-sref-active="active">
-                <a ui-sref="test-master-details">test details</a>
-              </li>
+              <li><a href="inbox.php" class="btn bg-primary">View All</a></li>
             </ul>
-          </div>
-        </div>
-      </div>
+            <li><a href="#" class="settings dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell animated shake"></i><span class="badge bg-success">10</span></a>
+              <ul class="dropdown-menu notifications">
+                <li>
+                  <a href="#">
+                    <i class="fa fa-user noty-icon bg-primary"></i> 
+                    <span class="description">10 Users are registered</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-danger">
+                    <i class="fa fa-inbox noty-icon bg-pink"></i> 
+                    <span class="description">Your disk space has been exceeeded</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-info">
+                    <i class="fa fa-comment noty-icon bg-purple"></i> 
+                    <span class="description">58 new comments</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-warning">
+                    <i class="fa fa-user noty-icon bg-warning"></i> 
+                    <span class="description">User deleted</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-success">
+                    <i class="fa fa-bookmark-o noty-icon bg-seagreen"></i> 
+                    <span class="description">You have a new badge</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-info">
+                    <i class="fa fa-envelope noty-icon bg-info"></i> 
+                    <span class="description">24 Unread mails</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-success">
+                    <i class="fa fa-link noty-icon bg-purple"></i> 
+                    <span class="description">Urls forwarding activated</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-warning">
+                    <i class="fa fa-clock-o noty-icon bg-yellow"></i> 
+                    <span class="description">Action</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-danger">
+                    <i class="fa fa-exclamation noty-icon bg-danger"></i> 
+                    <span class="description">3 domains expired</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-success">
+                    <i class="fa fa-clock-o noty-icon bg-success"></i> 
+                    <span class="description">Your have $950 as outstanding amount</span>
+                    <span class="time"> <i class="fa fa-clock-o"></i> 06:58 PM</span>
+                  </a>
+                </li>
+
+                <li><a href="#" class="btn bg-primary">View All</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="settings"><i class="fa fa-cogs settings-toggle"></i><span class="badge bg-info">20</span></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav> <!-- /.navbar -->
+  </div>

@@ -8,7 +8,7 @@
  * Controller of the pmsApp
  */
 angular.module('pmsApp')
-  .controller('AboutCtrl', function ($scope, $http) {
+  .controller('AboutCtrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

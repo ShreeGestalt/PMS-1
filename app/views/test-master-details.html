@@ -1,203 +1,139 @@
-<div class="Add-test">
-	<div class="row">                                      <!-- Main ROW Open -->	
-		<h1>Add test</h1>   
-		<form role="form-inline">
-			<div class="col-md-6">                   <!-- 1st division -->
-				<div class="form-group">	          
-					<label class="control-label" for="inputdefault">Test name:</label>
-				    <input capitalize class="form-control" ng-model="tstname" id="121" type="text">
-				</div>
+<div class="assign-test">
+	<h1>assign-test</h1>
+	   <div class="col-md-10"><!-- main divisionstarts here -->
+	        <div class="col-md-12">
+			    <div class="input-group">
+			      <input type="text" class="form-control" placeholder="Search patient by name,middle name or surname ...">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button">Search!</button>
+			      </span>
+			    </div><!-- /input-group -->
+		    </div><!-- /.col-md-12 --><hr class="divider"><hr class="divider">
+     
+                      <div class="col-md-12">
+  				        <form role="form">
+  				  
+			  				  <div class="col-md-4">
+							        <label for="first">Test</label>
+			                        <input id="first" type="radio" name="content" ng-model="content" ng-init="content=true" value="first">
+			                  </div>
 
-                <div class="form-group">     
-		        	<label  class="control-label" for="inputdefault">Group</label>:
-					<select class="selectpicker form-control">
-						<option>example</option>
-						<option>example</option> 
-					</select>
-				</div>
+							    <div class="col-md-4">
+							       <label for="second">Profile</label>
+			                       <input id="second" type="radio" name="content" ng-model="content" value="second">
+							    </label></div>
 
-			    <div class="form-group">	          
-					<label class="control-label" for="inputdefault">Add Group:</label>
-				    <input capitalize class="form-control" ng-model="adg" id="122" type="text">
-				</div>
+							    <div class="col-md-4">
+							        <label for="third">D.T</label>
+			                       <input id="third" type="radio" name="content" ng-model="content" value="third"></div>
+							    </label>
+		              </div>
+				        </form>
+		    </div><hr class="divider">
+		    
+                       <div class="col-md-10" ng-show="content == 'first'"> <!-- division for test radio button -->
+                             <form group="inline">
+                                 <table id="myTable" class="table table-striped table-bordered" >
+                                        <thead>  
+                                            <tr>  
+                                              <th>Tests</th>                                              
+                                           </tr>  
+                                          </thead>  
+                                          <tbody>  
+                                              <tr>  
+                                                <th><label class="radio-inline">
+												    <input type="checkbox" name="optrao">TEST
+												    </label></div>
+												    <div class="col-md-4">
+												    <label class="radio-inline">
+												    <input type="checkbox" name="optrao">PROFILE
+												    </label></div>
+												    <div class="col-md-4">
+												    <label class="radio-inline">
+												    <input type="checkbox" name="optdio">D.T
+												    </label></div>
+												 </th>                                               
+                                               </tr>                                               
+                                             </tbody>  
+                                        </table>  
+                                 </form>
+                       </div><!-- division for test radio button ends here -->
 
-			    <div class="form-group">	          
-					<label class="control-label" for="inputdefault">Heading:</label>
-				    <input capitalize class="form-control" ng-model="hding" id="123" type="text">
-				</div>
+              <div class="col-md-10" ng-show="content == 'second'">  <!-- division for profile radio button -->
+                             <form group="inline">
+                                 <table id="myTable" class="table table-striped table-bordered" >
+                                        <thead>  
+                                            <tr>  
+                                              <th>Profile</th>                                              
+                                           </tr>  
+                                          </thead>  
+                                          <tbody>  
+                                              <tr>  
+                                                <th><label class="radio-inline">
+												    <input type="checkbox" name="oadio">profile 1
+												    </label></div>
+												    <div class="col-md-4">
+												    <label class="radio-inline">
+												    <input type="checkbox" name="optradio">PROFILE 2
+												    </label></div>
+												    <div class="col-md-4">
+												    <label class="radio-inline">
+												    <input type="checkbox" name="optradio">profile 3
+												    </label></div>
+												 </th>                                               
+                                               </tr>                                               
+                                             </tbody>  
+                                        </table>  
+                                 </form></div><!-- division for profile radio button ends here -->
 
-			    <div class="form-group">
-					<label class="control-label" for="inputdefault">Test code</label>:
-					<input type="text" name="input" class="form-control" ng-model="tc" min="0" max="99" required />
-				</div>
+                                  <div class="col-md-10" ng-show="content == 'third'"><!-- division for D.T radio button  -->
+                             <form group="inline">
+                                 <table id="myTable" class="table table-striped table-bordered" >
+                                        <thead>  
+                                            <tr>  
+                                              <th>D.T</th>                                              
+                                           </tr>  
+                                          </thead>  
+                                          <tbody>  
+                                              <tr>  
+                                                <th><label class="radio-inline">
+												    <input type="checkbox" name="adio">D.T
+												    </label></div>
+												    <div class="col-md-4">
+												    <label class="radio-inline">
+												    <input type="checkbox" name="oradio">D.T
+												    </label></div>
+												    <div class="col-md-4">
+												    <label class="radio-inline">
+												    <input type="checkbox" name="opadio">D.T
+												    </label></div>
+												 </th>                                               
+                                               </tr>                                               
+                                             </tbody>  
+                                        </table>  
+                                 </form></div><!-- division for DT radio button ends here -->
 
-		        <div class="form-group">
-					<label class="control-label" for="inputdefault">Test charges</label>:
-					<input type="number" name="input" class="form-control" ng-model="tc" min="0" max="99" required />
-				</div>
+                                     <div class="col-md-12"><hr class="divider">
+                                          <H4>SAMPLE</H4>
+							  				 <label class="radio-inline">
+												    
+												    <div class="col-md-4">
+												    <label class="radio-inline">
+												    <input type="checkbox" name="oradio">BLOOD
+												    </label></div>
+												    <div class="col-md-4">
+												    <label class="radio-inline">
+												    <input type="checkbox" name="opadio">SUGAR
+												    </label>
+		                                 </div>
 
-			    <div class="form-group">
-             		<label class="control-label" for="inputdefault">Remark:</label>
-                    <textarea class="form-control custom-control" rows="8" style="resize:none"></textarea>
-				</div>
-
-			    <div class="form-group">     
-			    	<label  class="control-label" for="inputdefault">Flag</label>:
-					<select class="selectpicker form-control">
-						<option>sample</option>
-						<option>ple</option> 
-					</select>
-				</div>
-				    
-				<div class="form-group">     
-					<label class="control-label" for="inputdefault">Method</label>:
-					<select class="selectpicker form-control">
-						<option>example</option>
-						<option>example</option>
-					</select>
-					<button type="button" class="btn btn-warning btn-sm">ADD METHOD</button>
-				</div>
-						 
-				<div class="form-group">
-					<label class="control-label" for="inputdefault">Sample</label>:
-					<select class="selectpicker form-control">
-						<option>example</option>
-						<option>example</option>
-					</select>
-				    <button type="button" class="btn btn-warning btn-sm">ADD SAMPLE</button>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label" for="inputdefault">Instrument</label>:
-					<select class="selectpicker form-control">
-						<option>example</option>
-						<option>example</option>
-					</select>
-				    <button type="button" class="btn btn-warning btn-sm">ADD INSTRUMENT</button>
-				</div>
-			</div>	
-		</form>
-			    
-        <h3>Test parameters</h3>
-        <form role="form-inline"> 
-        	<div class="col-md-6">              <!-- 2nd division of web page -->  
-				<div class="form-group">     
-		        	<label  class="control-label" for="inputdefault">Exam type</label>:
-					<select class="selectpicker form-control">
-						<option>example</option>
-						<option>example</option> 
-					</select>
-				</div>
-
-				<div class="form-group">	          
-			    	<label class="control-label" for="inputdefault">Test details:</label>
-			        <input capitalize class="form-control" ng-model="td" id="124" type="text">
-				</div>
-
-		        <div class="form-group">	          
-		            <label class="control-label" for="inputdefault">Unit:</label>
-		            <input capitalize class="form-control" ng-model="unt" id="125" type="text">
-	            </div>
-
-	            <div class="form-group">	          
-		            <label class="control-label" for="inputdefault">Order:</label>
-		            <input capitalize class="form-control" ng-model="order" id="125" type="text">
-	            </div>
-
-	            <div class="form-group">	          
-		            <label class="control-label" for="inputdefault">Min ref.:</label>
-		            <input capitalize class="form-control" ng-model="minref" id="77" type="text">
-	            </div>
-
-	            <div class="form-group">	          
-		            <label class="control-label" for="inputdefault">Max ref.:</label>
-		            <input capitalize class="form-control" ng-model="maxref" id="55" type="text">
-	            </div>
-
-	            <div class="form-group">	          
-		            <label class="control-label" for="inputdefault">Min age:</label>
-		            <input capitalize class="form-control" ng-model="minage" id="111" type="text">
-	            </div> 
-
-	            <div class="form-group">	          
-		            <label class="control-label" for="inputdefault">Max age:</label>
-		            <input capitalize class="form-control" ng-model="maxage" id="45" type="text">
-	            </div>
-
-	            <div class="form-group">     
-	            	<label  class="control-label" for="inputdefault">Gender</label>:
-					<select class="selectpicker form-control">
-						<option>Male</option>
-						<option>Female</option> 
-					</select>
-			    </div>
-
-			    <div class="form-group">
-				    <div class="col-md-offset-1  col-md-12">
-						<button type="button" class="btn btn-warning">ADD</button>
-						<button type="button" class="btn btn-info">UPDATE</button>
-						<button type="button" class="btn btn-warning">DONE</button>
-					</div>
-				</div>
-			</div>
-		</form>
-	</div>
+		                                 <div class="col-md-12"><hr class="divder">
+		                                       <div class="">
+											  <button type="button" class="btn btn-success" ng-click="">SUBMIT</button>
+											 
+											  <div class="col-md-4">
+											  <button type="button" class="btn btn-info" onclick="window.location.href='http://localhost:9000/#/test-calculator'" ng-click="">START</button>
+											  </div>      
+											</div>
+	   </div>
 </div>
-
-<!-- table --> 
-<div class="row">                                 
-	<table class="table table-bordered">
-		<thead>
-			<tr>
-				<th>EXAMINATION TYPE</th>
-				<th>ORDER</th>
-			    <th>TEST DETAILS</th>
-				<th>UNIT</th>
-				<th>REFERANCE RANGE</th>
-				<th>AGE</th>
-				<th>GENDER</th>
-		        <th>ACTION</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-			  	<td>EXAMPLE 1</td>
-			  	<td>test1</td>
-			  	<td>detail</td>
-			  	<td>test1<td>
-			  	<td>test1</td>
-			  	<td>male</td>
-			  	<td>
-			  		<a href="#"  <span class="glyphicon glyphicon-upload" data-toggle="tooltip" data-placement="top" title="UPDATE"></a>
-                	<a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a>
-                </td>
-			</tr>
-			<tr>
-				<td>EXAMPLE 2</td>
-			   	<td>test1</td>
-			   	<td>test1</td>
-			   	<td>test1</td>
-			   	<td>test1</td>
-			   	<td>test1</td>
-			   	<td>female</td>
-			   	<td>
-			   		<a href="#"  <span class="glyphicon glyphicon-upload" data-toggle="tooltip" data-placement="top" title="UPDATE"></a>
-               		<a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a>
-               	</td>
-		  	</tr>
-		  	<tr>
-			   	<td>EXAMPLE3</td>
-			   	<td>test1</td>
-			   	<td>test1</td>
-			   	<td>test1</td>
-			   	<td>test1</td>
-			   	<td>test3</td>
-				<td>male</td>
-			   	<td>
-			   		<a href="#"  <span class="glyphicon glyphicon-upload" data-toggle="tooltip" data-placement="top" title="UPDATE"></a>
-               		<a href="#"  <span class="glyphicon glyphicon-remove" data-toggle="tooltip" data-placement="top" title="DELETE"></a>
-               	</td>
-		  	</tr>
-		</tbody>
-	</table>
-</div>		

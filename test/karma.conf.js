@@ -35,6 +35,9 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-ui-grid/ui-grid.js',
+      'bower_components/pdfmake/index.js',
+      'bower_components/vfs_fonts/index.js',
+      'bower_components/CSV-JS/csv.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

@@ -1,1 +1,223 @@
-<p>This is the id-management view.</p>
+<div class="id-management">
+<h3>id-management </h3>
+		<form> <!-- main form  -->
+                             <div class="col-md-12">
+                                 <form role="form">
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">OPD
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">PATHOLOGY
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">IPD
+                                </label> 
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">OPD pathology
+                                </label> 
+                            </div> <hr class="divider">                            
+    
+
+	    <div class="col-md-6">               <!-- FIRST DIVISION -->
+                 <form role="inline">        <!--  first form  -->
+				   
+              <div class="col-md-6"> 
+                   <label  class="control-label" for="inputdefault">Sub category</label>
+                   </div>
+                   <div class="col-md-6">
+                      <select class="selectpicker form-control">
+                      <option>example</option>
+                      <option>example</option> 
+                   </select>
+               
+              
+              </div>
+
+				    
+
+                   
+
+			        <div class="form-group">
+              <div class="col-md-6"> 	          
+				            <label class="control-label" for="inputdefault">Bar code series:</label></div>
+                    <div class="col-md-5">
+				            <input capitalize class="form-control" ng-model="bid" id="inputdefault" type="numbers">
+			        </div></div>
+
+               
+               <div class="col-md-6"> 
+                   <label  class="control-label" for="inputdefault">Format</label>
+                   </div>
+                   <div class="col-md-6">
+                      <select class="selectpicker form-control">
+                      <option>example</option>
+                      <option>example</option> 
+                   </select>
+               
+              
+              </div>
+              <div class="form-group">
+              <div class="col-md-6">            
+                    <label class="control-label" for="inputdefault">Start From</label></div>
+                    <div class="col-md-5">
+                    <input capitalize class="form-control" ng-model="bid" id="inputdefault" type="numbers">
+              </div></div>
+
+
+
+
+                 
+                  
+                </form>           <!-- first form ends -->
+              
+
+              
+
+
+
+
+              </div>                                <!-- first division End -->
+
+             <div class="col-md-6">                <!-- SECOND DIVISION -->
+                  <div class="row">
+              <div class="col-md-5"> 
+                   <label  class="control-label" for="inputdefault">Effect from</label>
+                   </div>
+                   <div class="col-md-5">
+                      <select class="selectpicker form-control">
+                      <option>example</option>
+                      <option>example</option> 
+                   </select></div><div class="col-md-4">
+               
+              </div>
+              </div>
+
+			        <div class="form-group">
+                     <div class="col-md-5"> 	          
+				            <label class="control-label" for="inputdefault">Prefix</label></div>
+                    <div class="col-md-5"> 
+				            <input capitalize class="form-control" ng-model="repid" id="inputdefault" type="text">
+			        </div></div>
+
+               <div class="form-group">
+                     <div class="col-md-5">             
+                    <label class="control-label" for="inputdefault">postfix</label></div>
+                    <div class="col-md-5"> 
+                    <input capitalize class="form-control" ng-model="repid" id="inputdefault" type="text">
+              </div></div>
+                 
+                 <div class="form-group">
+                  <div class="col-md-5">
+               <form role="form">
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio">Reset on Financial Year (1st April)
+                                </label>
+                      </div></div>
+			        
+
+                </form><!-- second form ends -->
+
+                  
+
+<hr class="divider">
+			         </div> 
+               <div class="col-md-12"> 
+                <hr class="divider"> 
+                    <button type="button" class="btn btn-primary btn-sm">DONE</button>                    
+                    <button type="button" class="btn btn-warning btn-sm">CLEAR</button>
+                    </div></div>
+                                      
+
+
+
+                         
+                <div class="col-md-12"> <!-- third division -->
+                    
+                                  <form group="inline">
+                                    <table id="myTable" class="table table-striped table-bordered" >
+
+                                              <thead>  
+                                                <tr>  
+                                                  <th>category</th>  
+                                                  <th>sub category</th>  
+                                                  <th>effect from</th>  
+                                                  <th>pre</th>
+                                                  <th>format</th>  
+                                                  <th>post</th>  
+                                                  <th>starts</th>  
+                                                  <th>reset</th>
+                                                  <th>Srno</th>  
+                                                  <th>action</th>  
+                                                   
+                                                  
+                                                </tr>  
+                                              </thead>  
+                                              <tbody>  
+                                                <tr>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>
+                                                  <td></td>
+
+                                                </tr>  
+                                                <tr>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td> 
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>
+                                                  <td></td>  
+                                                  <td></td> 
+                                                </tr>  
+                                                <tr>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>
+                                                  <td></td>  
+                                                  <td></td>  
+                                                </tr>  
+                                                 <tr>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>
+                                                  <td></td>  
+                                                  <td></td>    
+                                                </tr>  
+                                                <tr>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>  
+                                                  <td></td>
+                                                  <td></td>  
+                                                  <td></td>    
+                                                </tr>  
+                                               
+                                                
+                                              </tbody>  
+                                            </table> 
+                                      </form>
+  </form><!-- main form ends-->
+
+</div>

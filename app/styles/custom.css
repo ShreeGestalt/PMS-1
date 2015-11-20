@@ -1,6 +1,6 @@
 .myGrid {
-	width: 1000px;
-	height: 100px;
+	width: 697px;
+	height: 169px;
 }
 
 
@@ -30,4 +30,86 @@
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding-box;
           background-clip: padding-box;
+
+}
+ .addBorder {
+    border: 2px solid black;
+}      
+
+.stylish{
+  display:block;width:100px
+  ;height:100px;border-radius:66px;
+  border:4px double #ccc;
+  font-size:20px;color:#666;
+  line-height:100px;
+  text-align:center;
+  text-decoration:none;
+  text-shadow:0 1px 0 #fff;
+  background:#ddd
+  }
+  .stylish:hover{
+    border:4px double #bbb;
+    color:#aaa;
+    text-decoration:none;
+    background:#e6e6e6
+}
+.inset{
+  display:block;
+  width:80px;height:80px;
+  border-radius:50px;
+  font-size:20px;
+  color:#fff;
+  line-height:100px;
+  text-shadow:0 1px 0 #666;
+  text-align:center;text-decoration:none;
+  box-shadow:1px 1px 2px #000;
+  background:#8FBC8F;
+  opacity:0.95
+}
+
+.inset2{
+  display:block;
+  width:80px;height:80px;
+  border-radius:50px;
+  font-size:20px;
+  color:#fff;
+  line-height:100px;
+  text-shadow:0 1px 0 #666;
+  text-align:center;text-decoration:none;
+  box-shadow:1px 1px 2px #000;
+  background:#00BFFF;
+  opacity:0.95
+}
+.inset3{
+  display:block;
+  width:80px;height:80px;
+  border-radius:50px;
+  font-size:20px;
+  color:#fff;
+  line-height:100px;
+  text-shadow:0 1px 0 #666;
+  text-align:center;text-decoration:none;
+  box-shadow:1px 1px 2px #000;
+  background:#5F9EA0;
+  opacity:0.95
+}
+.inset4{
+  display:block;
+  width:80px;height:80px;
+  border-radius:50px;
+  font-size:20px;
+  color:#fff;
+  line-height:100px;
+  text-shadow:0 1px 0 #666;
+  text-align:center;text-decoration:none;
+  box-shadow:1px 1px 2px #000;
+  background:#008B8B;
+  opacity:0.95
+}
+.inset:hover{
+  color:#eee;
+  text-shadow:0 0 1px #666;
+  text-decoration:none;
+  box-shadow:0 0 4px #222 inset;
+  opacity:2
 }

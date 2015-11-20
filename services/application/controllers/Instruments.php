@@ -2,129 +2,328 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH . '/controllers/CosRestController.php';
 
+
 class Instruments extends CosRestController
 {
+  public function __construct() {
+        parent::__construct();
+        $this->load->database();
+//        $this->load->model('user_model');
+  }
+
   public function index_get() /**/
   {
-    //echo $id;
-    //category_name->rest->get('user', array('id' => $id), 'json');
-     
-    //echo $user->name;
-    $this->load->database();
-    $this->db->select('category_id AS id, category_name AS name,  genric_id as G_id');  
+    $this->db->select('generic_cate_id AS id, generic_cate AS name');  
     $this->db->distinct();
-    $this->db->order_by("category_name", "asc");
-    /*if(empty($id))
-    {
-     $this->db->where("generic_id", $id);
-    }*/
-    $this->response(array("data" => $this->db->get('genric_category')->result()));  //cosUser
+    $this->db->order_by("generic_cate", "asc");
+    
+    $this->response(array("data" => $this->db->get('generic_category')->result()));  //cosUser
   }
 
-  public function category_get($id)
+  public function instrument_delete() /*deleting the category from database*/
   {
-    // $this->load->database();
-    // $this->response( $this->db->get('district')->result() );
-
-    // $data = array('returned: '. $this->get('id'));
-    // $this->response($data);
-
     $this->load->database();
-    // $this->db->select('districtID, districtName');
-    // $sql = $this->db->get_compiled_select( 'districts' );
-    // $this->response( $sql );
+    $this->load->helper('array');
+    $gId = $this->get('genericId');
+    $rowId = $this->get('rowId');
+    echo "Pravin".$gId; exit();
 
-    $this->db->select('category_id AS id, category_name AS name, genric_id AS G_id');
-    $this->db->distinct();
-    $this->db->order_by("category_name", "asc");
-    $this->db->where('genric_id', $id);
-    //$this->db->where_not_in('stream', 'N/A');
+    $rowData = array(
+      'is_delete'=> 1
+      );
+      switch ($gId) {
 
-    $this->response(array("data" => $this->db->get('genric_category')->result()));
+        case 1:
+                $this->db->where('generic_instrument_id', $rowId);
+                $this->response(array("data" => $this->db->update('generic_instrument_master', $rowData)->result()));
+                break;
+          
+        case 2:
+                $this->db->where('generic_faculty_id', $rowId);
+                $this->response(array("data" => $this->db->delete('generic_faculty_master')->result()));
+                break;
+
+        case 3:
+                $this->db->where('generic_exam_type_id', $rowId);
+                $this->response(array("data" => $this->db->delete('generic_exam_type_master')->result()));
+                break;
+
+        case 4:
+                $this->db->where('generic_group_id', $rowId);
+                $this->response(array("data" => $this->db->delete('generic_group_master')->result()));
+                break;
+
+        case 5:
+                $this->db->where('generic_method_id', $rowId);
+                $this->response(array("data" => $this->db->delete('generic_method_master')->result()));
+                break;
+
+        case 6:
+                $this->db->where('generic_sample_id', $rowId);
+                $this->response(array("data" => $this->db->delete('generic_sample_master')->result()));
+                break;
+
+        case 7:
+                $this->db->where('generic_staff_category_id', $rowId);
+                $this->response(array("data" => $this->db->delete('generic_staff_category_master')->result()));
+                break;
+        default:
+                $this->response(array("data" =>"Please check your input"));
+                break;
+       }
   }
 
- /* public function generic_get($id)
+  public function instrument_get()
   {
-    // $this->load->database();
-    // $this->response( $this->db->get('district')->result() );
+    //$this->load->database();
+    $id = $this->get('id');
+    $is_delete = 0;
+      switch ($id) {
+         case 1:
+                  $this->db->select('generic_instrument_id AS row_id, generic_instrument_name AS generic_name, generic_category_id AS generic_id');
+                  $this->db->distinct();
+                  $this->db->order_by("generic_instrument_name", "asc");
+                  $this->db->where('generic_category_id', $id);
+                  $this->db->where('is_delete', $is_delete);
+                  $this->response(array("data" => $this->db->get('generic_instrument_master')->result()));
+                  break;
+          
+          case 2:
+                  $this->db->select('generic_faculty_id AS row_id, generic_faculty_name AS generic_name, generic_category_id AS generic_id');
+                  $this->db->distinct();
+                  $this->db->order_by("generic_faculty_name", "asc");
+                  $this->db->where('generic_category_id', $id);
+                  $this->db->where('is_delete', $is_delete);
+                  $this->response(array("data" => $this->db->get('generic_faculty_master')->result()));
+                  break;
 
-    // $data = array('returned: '. $this->get('id'));
-    // $this->response($data);
+          case 3 :
+                  $this->db->select('generic_exam_type_id AS row_id, generic_exam_type_name AS generic_name, generic_category_id AS generic_id');
+                  $this->db->distinct();
+                  $this->db->order_by("generic_exam_type_name", "asc");
+                  $this->db->where('generic_category_id', $id);
+                  $this->db->where('is_delete', $is_delete);
+                  $this->response(array("data" => $this->db->get('generic_exam_type_master')->result()));
+                  break;
 
-    $this->load->database();
-    // $this->db->select('districtID, districtName');
-    // $sql = $this->db->get_compiled_select( 'districts' );
-    // $this->response( $sql );
+           case 4 :
+                  $this->db->select('generic_group_id AS row_id, generic_group_name AS generic_name, generic_category_id AS generic_id');
+                  $this->db->distinct();
+                  $this->db->order_by("generic_group_name", "asc");
+                  $this->db->where('generic_category_id', $id);
+                  $this->db->where('is_delete', $is_delete);
+                  $this->response(array("data" => $this->db->get('generic_group_master')->result()));
+                  break;
 
-    $this->db->select('instrument_name AS name, instrument_id AS value');
-    //$this->db->select('generic_id');
-    $this->db->distinct();
-    $this->db->order_by("instrument_name", "asc");
-    $this->db->where("generic_id", $id);
-    //$this->db->where("district", $district);
-    //$this->db->where_not_in('branch', 'N/A');
-    $this->response(array("data" => $this->db->get('instrumentnames')->result()));
-  }*/
+           case 5 :
+                  $this->db->select('generic_method_id AS row_id, generic_method_name AS generic_name, generic_category_id AS generic_id');
+                  $this->db->distinct();
+                  $this->db->order_by("generic_method_name", "asc");
+                  $this->db->where('generic_category_id', $id);
+                  $this->db->where('is_delete', $is_delete);
+                  $this->response(array("data" => $this->db->get('generic_method_master')->result()));
+                  break;
 
-  public function index_post()
+           case 6 :
+                  $this->db->select('generic_sample_id AS row_id, generic_sample_name AS generic_name, generic_category_id AS generic_id');
+                  $this->db->distinct();
+                  $this->db->order_by("generic_sample_name", "asc");
+                  $this->db->where('generic_category_id', $id);
+                  $this->db->where('is_delete', $is_delete);
+                  $this->response(array("data" => $this->db->get('generic_sample_master')->result()));
+                  break;
+
+           case 7 :
+                  $this->db->select('generic_staff_category_id AS row_id, generic_staff_category_name AS generic_name, generic_category_id AS generic_id');
+                  $this->db->distinct();
+                  $this->db->order_by("generic_staff_category_name", "asc");
+                  $this->db->where('generic_category_id', $id);
+                  $this->db->where('is_delete', $is_delete);
+                  $this->response(array("data" => $this->db->get('generic_staff_category_master')->result()));
+                  break;
+          default:
+                  $this->response(array("data" =>"Invalid input"));
+                  break;
+       }
+  }
+
+  public function instrument_post()
   {
     try {
-      // $fName = $this->input->post("firstName");
-      // $fName = $_POST["firstName"];
-      // $this->load->library('encrypt');
-      //$_POST["instrument_id"] = 2;
-      //$_POST["instrument_name"] = "Instruments-2";
-      //$_POST["generic_id"] = 1;
-      $type = $this->post('generic_type');
-
-      if( $type == 'group' ) {
-        $tableName = 'pmsGroupTable';
-      } else       if( $type == 'group' ) {
-        $tableName = 'pmsInstruTable';
-      }
-
-      $user = array(
-         //'category_id'=> $this->post('category_id'),
-         'category_name'=> $this->post('generic_name'),
-         'genric_id'=> $this->post('category_id')
-        /*'csFirstName' => $this->post('firstName'),
-        'csLastName' => $this->instrument_idpost('lastName'),
-        'csPhone' => $this->post('phone'),
-        'csGender' => $this->post('gender'),
-        'csDistrict' => $this->post('district'),
-        'csAboutMe' => $this->post('aboutMe'),
-        'csEmail' => $this->post('email'),
-        'isBlock' => 1,
-        'csOtp'=> rand(pow(10, 3), pow(10, 4)-1),
-        'csPassword' => MD5($this->post('password')),
-        'ipAddress' => $this->input->ip_address(),
-        'createdDateTime' => date("Y-m-d H:i:s")*/
-      );
-      //print_r($user);
       $this->load->database();
       $this->load->helper('array');
+      switch ($this->post('category_id')) {
+        case 1:
+                $user = array(
+                    'generic_instrument_name'=> $this->post('generic_name'),
+                    'generic_category_id'=> $this->post('category_id')
+                  );
+                $this->db->where('generic_instrument_name', element('generic_instrument_name', $user));
+                $query = $this->db->get('generic_instrument_master');
+                $count = $query->num_rows();
+                if( $count === 0 ) {
+                  $this->db->insert('generic_instrument_master', $user);
+                  $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_instrument_name', $user ),
+                        "message" => "User added succefully"
+                      )));
+                } else {
+                    $this->response(array("data" => array(
+                      "status" => 301,
+                      "message" => "Mobile number Or email allready exists.",
+                      "query" => $this->db->last_query()
+                    )));
+                }
+                break;
+          
+        case 2:
+                $user = array(
+                          'generic_faculty_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id')
+                        );
+                $this->db->where('generic_faculty_name', element('generic_faculty_name', $user));
+                $query = $this->db->get('generic_faculty_master');
+                $count = $query->num_rows();
+                if( $count === 0 ) {
+                  $this->db->insert('generic_faculty_master', $user);
+                  $this->response(array("data" => array(
+                    "status" => 201,
+                    "id" => element( 'generic_faculty_name', $user ),
+                    "message" => "User added succefully"
+                  )));
+                } else {
+                  $this->response(array("data" => array(
+                    "status" => 301,
+                    "message" => "Mobile number Or email allready exists.",
+                    "query" => $this->db->last_query()
+                  )));
+                }
+                break;
 
-      $this->db->where('genric_id',element( 'genric_id', $user ));
-      //$this->db->or_where('csEmail', element( 'csEmail', $user ));
+        case 3 :
+                  $user = array(
+                          'generic_exam_type_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id')
+                              );
+                    $this->db->where('generic_exam_type_name', element('generic_exam_type_name', $user));
+                    $query = $this->db->get('generic_exam_type_master');
+                    $count = $query->num_rows();
+                    if( $count === 0 ) {
+                      $this->db->insert('generic_exam_type_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_exam_type_name', $user ),
+                        "message" => "User added succefully"
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "Mobile number Or email allready exists.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
 
-      $query = $this->db->get('genric_category');
+           case 4 :
+                  $user = array(
+                          'generic_group_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id')
+                              );
+                    $this->db->where('generic_group_name', element('generic_group_name', $user));
+                    $query = $this->db->get('generic_group_master');
+                    $count = $query->num_rows();
+                    if( $count === 0 ) {
+                      $this->db->insert('generic_group_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_group_name', $user ),
+                        "message" => "User added succefully"
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "Mobile number Or email allready exists.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
 
-      $count = $query->num_rows();
-      if( $count === 0 ) {
-        $this->db->insert($tableName, $user);
-        $this->response(array("data" => array(
-          "status" => 201,
-          "id" => element( 'category_id', $user ),
-          "message" => "User added succefully.",
-          "query" => $this->db->last_query()
-        )));
-      } else {
-        $this->response(array("data" => array(
-          "status" => 301,
-          "message" => "Mobile number Or email allready exists.",
-          "query" => $this->db->last_query()
-        )));
-      }
+           case 5 :
+                  $user = array(
+                          'generic_method_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id')
+                              );
+                    $this->db->where('generic_method_name', element('generic_method_name', $user));
+                    $query = $this->db->get('generic_method_master');
+                    $count = $query->num_rows();
+                    if( $count === 0 ) {
+                      $this->db->insert('generic_method_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_method_name', $user ),
+                        "message" => "User added succefully"
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "Mobile number Or email allready exists.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
+
+           case 6 :
+                  $user = array(
+                          'generic_sample_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id')
+                              );
+                    $this->db->where('generic_sample_name', element('generic_sample_name', $user));
+                    $query = $this->db->get('generic_sample_master');
+                    $count = $query->num_rows();
+                    if( $count === 0 ) {
+                      $this->db->insert('generic_sample_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_sample_name', $user ),
+                        "message" => "User added succefully"
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "Mobile number Or email allready exists.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
+
+           case 7 :
+                  $user = array(
+                          'generic_staff_category_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id')
+                              );
+                    $this->db->where('generic_staff_category_name', element('generic_staff_category_name', $user));
+                    $query = $this->db->get('generic_staff_category_master');
+                    $count = $query->num_rows();
+                    if( $count === 0 ) {
+                      $this->db->insert('generic_staff_category_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_staff_category_name', $user ),
+                        "message" => "User added succefully"
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "Mobile number Or email allready exists.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
+         default:
+           $this->response(array("data" => "Invalid input"));
+       }
+      
     } catch(Exception $e) {
       $this->response(array("data" => array(
         "status" => 501,
@@ -134,97 +333,204 @@ class Instruments extends CosRestController
     }
   }
 
-  /*public function authorise_post()
-  {
-    $phone = $this->post('phone');
-    $otp = $this->post('otp');
+  public function instru_post()
+    {
+    try {
+       //$this->load->database();
+       $this->load->helper('array');
+       switch ($this->post('category_id')) {
+         case 1:
+          $user = array(
+                  'generic_instrument_name'=> $this->post('generic_name'),
+                  'generic_category_id'=> $this->post('category_id'),
+                  'generic_instrument_id'=> $this->post('id')
+                              );
+                    $this->db->where('generic_instrument_id', element('generic_instrument_id', $user));
+          $this->db->where('generic_category_id', element('generic_category_id', $user));
+                    $query = $this->db->get('generic_instrument_master');
+          $count = $query->num_rows();
+                    if( $count !== 0 ) {
+                      $this->db->update('generic_instrument_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_instrument_name', $user ),
+                        "message" => "generic instrument name updated successfully"
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "generic instrument name not updated successfully",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
+          
+          case 2:
+                  $user = array(
+                          'generic_faculty_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id'),
+              'generic_faculty_id'=> $this->post('id')
+                              );
+                    $this->db->where('generic_faculty_id', element('generic_faculty_id', $user));
+          $this->db->where('generic_category_id', element('generic_category_id', $user));
+                    $query = $this->db->get('generic_faculty_master');
+                    $count = $query->num_rows();
+                    if( $count !== 0 ) {
+                      $this->db->update('generic_faculty_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_faculty_name', $user ),
+                        "message" => "generic faculty name updated successfully."
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "generic faculty name not updated successfully.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
 
-    $this->load->database();
-    $this->load->helper('array');
+          case 3 :
+                  $user = array(
+                'generic_exam_type_name'=> $this->post('generic_name'),
+                'generic_category_id'=> $this->post('category_id'),
+                'generic_exam_type_id'=> $this->post('id')
+                               );
+                    $this->db->where('generic_exam_type_id', element('generic_exam_type_id', $user));
+          $this->db->where('generic_category_id', element('generic_category_id', $user));
+                    $query = $this->db->get('generic_exam_type_master');
+                    $count = $query->num_rows();
+                    if( $count !== 0 ) {
+                      $this->db->update('generic_exam_type_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_exam_type_name', $user ),
+                        "message" => "generic exam type name updated successfully."
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "generic exam type name not updated successfully.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
 
-    $this->db->where('csPhone',$phone );
-    $this->db->where('csOtp', $otp );
-    $this->db->where('isBlock', 1 );
+           case 4 :
+                  $user = array(
+                          'generic_group_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id'),
+              'generic_group_id'=> $this->post('id')
+                              );
+                    $this->db->where('generic_group_id', element('generic_group_id', $user));
+          $this->db->where('generic_category_id', element('generic_category_id', $user));
+                    $query = $this->db->get('generic_group_master');
+                    $count = $query->num_rows();
+                    if( $count !== 0 ) {
+                      $this->db->update('generic_group_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_group_name', $user ),
+                        "message" => "generic group name updated successfully."
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "generic group name not updated successfully.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
 
-    $query = $this->db->get('cosUsers');
+           case 5 :
+                  $user = array(
+                          'generic_method_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id'),
+              'generic_method_id'=> $this->post('id')
+                              );
+                    $this->db->where('generic_method_id', element('generic_method_id', $user));
+                    $this->db->where('generic_category_id', element('generic_category_id', $user));
+          $query = $this->db->get('generic_method_master');
+                    $count = $query->num_rows();
+                    if( $count !== 0 ) {
+                      $this->db->pdate('generic_method_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_method_name', $user ),
+                        "message" => "generic method name updated successfully."
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "generic method name not updated successfully..",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
 
-    $count = $query->num_rows();
+           case 6 :
+                  $user = array(
+                          'generic_sample_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id'),
+              'generic_sample_id'=> $this->post('id')
+                              );
+                    $this->db->where('generic_sample_id', element('generic_sample_id', $user));
+          $this->db->where('generic_category_id', element('generic_category_id', $user));
+                    $query = $this->db->get('generic_sample_master');
+                    $count = $query->num_rows();
+                    if( $count !== 0 ) {
+                      $this->db->update('generic_sample_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_sample_name', $user ),
+                        "message" => "generic sample name updated successfully."
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "generic sample name not updated successfully.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
 
-    if($count === 1 ) {
-      $data = array(
-        'isBlock' => 0
-      );
-
-      $this->db->where('csPhone',$phone );
-      $this->db->where('csOtp', $otp );
-      $this->db->update('cosUsers', $data);
-
+           case 7 :
+                  $user = array(
+                          'generic_staff_category_name'=> $this->post('generic_name'),
+                          'generic_category_id'=> $this->post('category_id'),
+              'generic_staff_category_id'=> $this->post('id')
+                              );
+                    $this->db->where('generic_staff_category_id', element('generic_staff_category_id', $user));
+          $this->db->where('generic_category_id', element('generic_category_id', $user));
+                    $query = $this->db->get('generic_staff_category_master');
+                    $count = $query->num_rows();
+                    if( $count !== 0 ) {
+                      $this->db->update('generic_staff_category_master', $user);
+                      $this->response(array("data" => array(
+                        "status" => 201,
+                        "id" => element( 'generic_staff_category_name', $user ),
+                        "message" => "generic staff category name updated successfully."
+                      )));
+                    } else {
+                      $this->response(array("data" => array(
+                        "status" => 301,
+                        "message" => "generic staff category name not updated successfully.",
+                        "query" => $this->db->last_query()
+                      )));
+                    }
+           break;
+         default:
+           $this->response(array("data" => "Invalid input"));
+       }
+      
+    } catch(Exception $e) {
       $this->response(array("data" => array(
-        "status" => 201,
-        "message" => "User is authorised.",
-        "otp" => $otp,
-        "query" => $this->db->last_query()
-      )));
-    } else {
-      $this->response(array("data" => array(
-        "status" => 301,
-        "message" => "You entered incorrect OTP. Please try agin.",
-        "otp" => $otp,
+        "status" => 501,
+        "message" => "Some error occured. Please contact admin.",
         "query" => $this->db->last_query()
       )));
     }
   }
-
-
-  public function login_post()
-  {
-    // $this->load->library('encrypt');
-
-    $phone = $this->post('phone');
-    $password = MD5($this->post('password'));
-
-    $this->load->database();
-    $this->load->helper('array');
-
-    $this->db->where('csPhone',$phone );
-    $this->db->where('csPassword', $password );
-    $this->db->where('isBlock', 0 );
-
-    $query = $this->db->get('cosUsers');
-
-    $count = $query->num_rows();
-
-    if($count === 1 ) {
-      $this->response(array("data" => array(
-        "status" => 201,
-        "message" => "Login successful.",
-        "query" => $this->db->last_query()
-      )));
-    } else {
-      $this->response(array("data" => array(
-        "status" => 301,
-        "message" => "User not authorised. Please try agin.",
-        "query" => $this->db->last_query()
-      )));
-    }
-  }
-
-  public function demo_post() {
-    $this->response(array("data" => array(
-      "status" => 301,
-      "message" => $this->post('firstName'),
-      "query" => md5('demo'),
-      "query1" => md5('demo'),
-      "query2" => md5('demo')
-    )));
-    // if( count($this->input->post()) > 0 )
-    // {
-    //     echo "Wroking";
-    // }
-    // else
-    // {
-    //   echo $this->post('firstName');
-    // }
-  }*/
 }
 ?>

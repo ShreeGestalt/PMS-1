@@ -3,54 +3,48 @@
 	   <div class="col-md-10"><!-- main divisionstarts here -->
 	        <div class="col-md-12">
 			    <div class="input-group">
-			      <input type="text" class="form-control" placeholder="Search patient by name,middle name or surname ...">
-			      <span class="input-group-btn">
-			        <button class="btn btn-default" type="button">Search!</button>
-			      </span>
+                    <input type="text" class="form-control" ng-keyup="checkPatient()" ng-model="check_patient" id="srch" placeholder="search.....">
 			    </div><!-- /input-group -->
-		    </div><!-- /.col-md-12 --><hr class="divider"><hr class="divider">
-     
-                      <div class="col-md-12">
-  				        <form role="form">
-  				  
-			  				  <div class="col-md-4">
-							        <label for="first">Test</label>
-			                        <input id="first" type="radio" name="content" ng-model="content" ng-init="content=true" value="first">
-			                  </div>
-
-							    <div class="col-md-4">
-							       <label for="second">Profile</label>
-			                       <input id="second" type="radio" name="content" ng-model="content" value="second">
-							    </label></div>
-
-							    <div class="col-md-4">
-							        <label for="third">D.T</label>
-			                       <input id="third" type="radio" name="content" ng-model="content" value="third"></div>
-							    </label>
-		              </div>
-				        </form>
-		    </div><hr class="divider">
-		    
-                       <div class="col-md-10" ng-show="content == 'first'"> <!-- division for test radio button -->
-                             <form group="inline">
-                                 <table id="myTable" class="table table-striped table-bordered" >
-                                        <thead>  
-                                            <tr>  
-                                              <th>Tests</th>                                              
-                                           </tr>  
+		    </div><!-- /.col-md-12 -->
+		    <hr class="divider"><hr class="divider">
+  			<div class="col-md-8">
+  				<form role="form">
+  				    <div class="col-md-4">
+						<label for="first">Test</label>
+			            <input id="first" type="radio" name="content" ng-change="selectTest()" ng-model="content" ng-init="content=true" ng-change="showHideDiv()" value="2">
+			        </div>
+					<div class="col-md-4">
+						<label for="second">Profile</label>
+			            <input id="second" type="radio" name="content" ng-change="selectTest()" ng-model="content" ng-change="showHideDiv()" value="1">
+					</div>
+					<div class="col-md-4">
+						<label for="third">D.T</label>
+			            <input id="third" type="radio" name="content" ng-change="selectTest()"  ng-change="showHideDiv()"ng-model="content" value="3">
+			        </div>
+				</form>
+			</div>
+		</div>
+		<hr class="divider">    
+        <div class="col-md-8" ng-show="content == '2'"> <!-- division for checkboxes -->
+           	<form group="inline">
+                <table id="myTable" class="table table-striped table-bordered" >
+                    <thead>  
+                        <tr>  
+                            <th>Tests</th>                                              
+                        </tr>  
                                           </thead>  
                                           <tbody>  
                                               <tr>  
                                                 <th><label class="radio-inline">
-												    <input type="checkbox" name="optrao">TEST
+												    <input type="checkbox" ng-model="chkStatus1" id="1" ng-change="showHideDiv()"/ name="optrao1">TEST
 												    </label></div>
 												    <div class="col-md-4">
 												    <label class="radio-inline">
-												    <input type="checkbox" name="optrao">PROFILE
+												    <input type="checkbox" ng-model="chkStatus2" ng-change="showHideDiv1()"/ name="optrao2">PROFILE
 												    </label></div>
 												    <div class="col-md-4">
 												    <label class="radio-inline">
-												    <input type="checkbox" name="optdio">D.T
+												    <input type="checkbox" ng-model="chkStatus3" ng-change="showHideDiv2()"/ name="optdio3">D.T
 												    </label></div>
 												 </th>                                               
                                                </tr>                                               
@@ -59,7 +53,7 @@
                                  </form>
                        </div><!-- division for test radio button ends here -->
 
-              <div class="col-md-10" ng-show="content == 'second'">  <!-- division for profile radio button -->
+              <div class="col-md-8" ng-show="content == '1'">  <!-- division for profile radio button -->
                              <form group="inline">
                                  <table id="myTable" class="table table-striped table-bordered" >
                                         <thead>  
@@ -70,15 +64,15 @@
                                           <tbody>  
                                               <tr>  
                                                 <th><label class="radio-inline">
-												    <input type="checkbox" name="oadio">profile 1
+												    <input type="checkbox" ng-model="chkStatus4" ng-change="showHideDiv3()"/ name="oadio" value="a">profile 1
 												    </label></div>
 												    <div class="col-md-4">
 												    <label class="radio-inline">
-												    <input type="checkbox" name="optradio">PROFILE 2
+												    <input type="checkbox" ng-model="chkStatus5" ng-change="showHideDiv4()"/ name="optradio1" value="b">PROFILE 2
 												    </label></div>
 												    <div class="col-md-4">
 												    <label class="radio-inline">
-												    <input type="checkbox" name="optradio">profile 3
+												    <input type="checkbox" ng-model="chkStatus6" ng-change="showHideDiv5()"/ name="optradio2" value="b">profile 3
 												    </label></div>
 												 </th>                                               
                                                </tr>                                               
@@ -86,54 +80,178 @@
                                         </table>  
                                  </form></div><!-- division for profile radio button ends here -->
 
-                                  <div class="col-md-10" ng-show="content == 'third'"><!-- division for D.T radio button  -->
-                             <form group="inline">
-                                 <table id="myTable" class="table table-striped table-bordered" >
-                                        <thead>  
+                                  <div class="col-md-8" ng-show="content == '3'"><!-- division for D.T radio button  -->
+                                     <form group="inline">
+                                       <table id="myTable" class="table table-striped table-bordered" >
+                                         <thead>  
                                             <tr>  
                                               <th>D.T</th>                                              
                                            </tr>  
-                                          </thead>  
+                                         </thead>  
                                           <tbody>  
                                               <tr>  
                                                 <th><label class="radio-inline">
-												    <input type="checkbox" name="adio">D.T
+												    <input type="checkbox" ng-model="chkStatus7" ng-change="showHideDiv6()"/  name="adio">D.T
 												    </label></div>
 												    <div class="col-md-4">
 												    <label class="radio-inline">
-												    <input type="checkbox" name="oradio">D.T
+												    <input type="checkbox" ng-model="chkStatus8" ng-change="showHideDiv7()"/ name="oradio">D.T
 												    </label></div>
 												    <div class="col-md-4">
 												    <label class="radio-inline">
-												    <input type="checkbox" name="opadio">D.T
+												    <input type="checkbox" ng-model="chkStatus9" ng-change="showHideDiv8()"/ name="opadio">D.T
 												    </label></div>
 												 </th>                                               
                                                </tr>                                               
                                              </tbody>  
                                         </table>  
-                                 </form></div><!-- division for DT radio button ends here -->
+                                 </form>
+                                 </div><!-- division for DT radio button ends here -->
 
-                                     <div class="col-md-12"><hr class="divider">
-                                          <H4>SAMPLE</H4>
-							  				 <label class="radio-inline">
-												    
-												    <div class="col-md-4">
-												    <label class="radio-inline">
-												    <input type="checkbox" name="oradio">BLOOD
-												    </label></div>
-												    <div class="col-md-4">
-												    <label class="radio-inline">
-												    <input type="checkbox" name="opadio">SUGAR
-												    </label>
+                                     <div class="col-md-8" ng-show='showhideprop'><hr class="divider"><!-- sample table -->                                          
+							  			          <table class="table table-bordered">
+												    <thead>
+												      <tr >
+												        <th class="danger">sample</th>
+												        <th class="danger">test</th>
+												        <th class="danger">collect</th>
+												        <th class="danger">received</th>
+												      </tr>
+												    </thead>
+												    <tbody>
+												      <tr>
+												          
+												        <td >Blood</td>
+												        <td>T1</td>
+												        <td><input type="checkbox" > </td>
+												        <td><input type="checkbox"> </td>
+
+												      </tr>
+												      <tr >
+												        <td >urine</td>
+												        <td>T2</td>
+												        <td><input type="checkbox" > </td>
+												         <td><input type="checkbox"> </td>
+												      </tr>
+								 				      <tr >
+												        <td >serum</td>
+												        <td>T3</td>
+												        <td><input type="checkbox" > </td>
+												        <td><input type="checkbox"></td>
+												      </tr>
+												       <tr>
+												       <td class="info"><label>test amount</label>:700</td>
+												       <td class="info"><label>total amount</label>:800</td>
+												       </tr>
+												    </tbody>
+												  </table>
+												   <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Receipt</button>
 		                                 </div>
 
+		                                
+													  <!-- Modal -->
+													<div class="modal" id="myModal" role="dialog">
+													  <div class="modal-dialog modal-md">
+													    <div class="modal-content">
+													      <div class="modal-header">
+													        <button type="button" class="close" data-dismiss="modal">&times;</button>
+													        <h2 class="modal-title">Reciept</h2>
+													     </div>
+										<div class="modal-body">
+
+										  <div class="col-md-5" ><!-- first division of page starts -->
+                          
+                                  <div class="form-group">            
+                                        <label class="control-label" for="inputdefault">Date</label>
+                                        <input  class="form-control" ng-model="Hname" id="125" type="text" mandotary>
+                                  </div>
+
+                         
+
+                                   <div class="form-group">            
+                                        <label class="control-label" for="inputdefault">extra charges</label>
+                                        <input  class="form-control" ng-model="rno" id="125" type="text" mandotary>
+                                   </div>
+
+                                    <div class="form-group">
+                                         <label class="control-label" for="inputdefault">balance.</label>
+                                        <input  class="form-control" ng-model="rno" id="125" type="text" mandotary>
+                                    </div>
+
+                                     <div class="form-group" ng-model="ccname">
+													 <label for="payment mode">Payment mode</label>
+														<select class="selectpicker form-control form-control" ng-model="selecteditem" ng-options="item.area for item in items">
+															<option>cash</option> 												   </select>
+											   </div>
+
+              </div><!-- first division of page ends -->
+
+               <div class="col-md-5"><!-- second division of page starts here --> 
+
+                                   <div class="form-group">
+                                      <div class="col-md-12">
+                                            <div class="form-group">            
+                                        <label class="control-label" for="inputdefault">discount</label>
+                                        <input  class="form-control" ng-model="rno" id="125" type="text" mandotary>
+                                       </div> 
+                                        </div>
+                                        
+                               </div> 
+                                
+                                  <div class="form-group">
+                                         <div class="col-md-12">  <div class="form-group">            
+                                        <label class="control-label" for="inputdefault">paid.</label>
+                                        <input  class="form-control" ng-model="rno" id="125" type="text" mandotary>
+                                       </div> </div>
+                                        
+                                   </div> 
+
+
+                                   <div class="form-group">
+                                         <div class="col-md-12">  
+                                           <div class="form-group">            
+                                        <label class="control-label" for="inputdefault">Total</label>
+                                        <input  class="form-control" ng-model="rno" id="125" type="text" mandotary>
+                                       </div>                                    </div> 
+
+
+                                                </div> <!-- second division of page ends -->
+                                               
+									      </form>
+
+                 <div class="col-md-8">
+                                 <div class= id="content" ng-show="selecteditem.id">
+		                                 <table id="myTable" class="display table table-bordered table-striped" width="100%" >
+		                                        <tbody>
+											         <div class="form-group">  
+											          <label for="payment details">Payment details</label></div>
+											          <div class="col-md-6"></div>
+											            <textarea rows="6" id="comment"></textarea>
+				                 </div>
+							                     </tbody>
+                                        </table>
+							               </div></div>
+										        </div>
+										        <div class="modal-footer">
+										          <button type="button" class="btn btn-success" ng-click="">SUBMIT</button>
+
+										          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>
+										      </div>
+										        </div>
+										        </form>
+										        </div></div></div>
+										<div class="modal-footer">
+										          <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+										        </div>
+										      </div>
+										    </div>
+										  </div>
+										</div>
 		                                 <div class="col-md-12"><hr class="divder">
-		                                       <div class="">
-											  <button type="button" class="btn btn-success" ng-click="">SUBMIT</button>
-											 
-											  <div class="col-md-4">
-											  <button type="button" class="btn btn-info" onclick="window.location.href='http://localhost:9000/#/test-calculator'" ng-click="">START</button>
-											  </div>      
-											</div>
+		                                       
+											<div class="col-md-4">
+											  <button type="button" class="btn btn-success" onclick="window.location.href='http://localhost:9000/#/test-calculator'" ng-click="">START</button>
+											 </div>      
+										 </div>
 	   </div>
 </div>

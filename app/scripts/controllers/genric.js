@@ -23,6 +23,7 @@ angular.module('pmsApp').controller('GenricCtrl', ['$scope', 'generic','genericS
 
     $scope.add = function(){
 
+      $scope.alerts = [];
       var postData = {
         generic_name: $scope.metadata.gname,
         category_id: $scope.selectedItem.id
@@ -34,7 +35,9 @@ angular.module('pmsApp').controller('GenricCtrl', ['$scope', 'generic','genericS
       };
 
       genericService.category.save(angular.toJson(postData), function(responce) {
+        $scope.alerts = [];
         if(responce.data.message === "User added succefully") {
+          $scope.alerts.push({msg: 'Record added successfully', type:'success'});
           $scope.gridOptions.data.push(updateData);
         }
         $scope.metadata.gname = "";
@@ -42,7 +45,8 @@ angular.module('pmsApp').controller('GenricCtrl', ['$scope', 'generic','genericS
   };
 
   $scope.getSelectedCategoryData = function() {
-    genericService.category.get({id: $scope.selectedItem.id}, function (valu){
+    genericService.category.get({id: $scope.selectedItem.id}, function (valu) {
+      $scope.categoryData = valu.data;
       var selectedCategoryData = {
         data: valu.data
       };
@@ -78,7 +82,7 @@ angular.module('pmsApp').controller('GenricCtrl', ['$scope', 'generic','genericS
     paginationPageSize: 25,
     columnDefs: [
       { name: 'generic_name', displayName: 'Name' },
-      { name: 'Action', enableCellEdit: false, cellTemplate:'<button class="btn primary" ng-click="grid.appScope.deleteRecord(row.entity)"><span class="glyphicon glyphicon-trash"></span></button>'}
+      { name: 'Action', enableCellEdit: false, cellTemplate:'<a href="" title="Delete Category" ng-click="grid.appScope.deleteRecord(row.entity)" class="btn">&nbsp;<i class="glyphicon glyphicon-trash"></i>&nbsp;</a>'}
     ]
   };
   
@@ -89,17 +93,26 @@ angular.module('pmsApp').controller('GenricCtrl', ['$scope', 'generic','genericS
   };
 
   $scope.deleteRecord = function(deleteData){
+    $scope.alerts = [];
     var removeData = {
       genericId: deleteData.generic_id,
       rowId: deleteData.row_id
-    }
-    
-    genericService.category.remove(angular.toJson(removeData), function(responce) {
-      console.log(responce);
+    };
+    genericService.deletecategory.save(angular.toJson(removeData), function(responce) {
+      if(responce.data.message === 'Row deleted successfully') {
+        angular.forEach($scope.categoryData, function(value, key) {
+          if(value.row_id === deleteData.row_id) {
+            $scope.categoryData.splice(key);    
+          }
+        });
+        $scope.gridOptions.data = $scope.categoryData;
+        $scope.alerts.push({msg: 'Record deleted successfully', type:'success'});
+      }
     });
   };
 
   $scope.saveRow = function(rowEntity) {
+    $scope.alerts = [];
     genericService.update.save(angular.toJson(rowEntity), function(responce) {
       $scope.gridOptions = responce.data[0];
     });
@@ -112,5 +125,15 @@ angular.module('pmsApp').controller('GenricCtrl', ['$scope', 'generic','genericS
     gridApi.rowEdit.on.saveRow($scope, $scope.saveRow);
   };
 
+  $scope.closeAlert = function(index) {
+    $scope.alerts = [];
+    $scope.loader = false;
+  }
   init();
+  $scope.showCreateModal=function(){
+    $scope.modalTitle="Create groups";
+    //true indiactes "add" operation perform
+    $scope.currOperation=true;
+    $('#myModal').modal('show');
+  }
 }]); 

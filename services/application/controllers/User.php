@@ -13,7 +13,6 @@
 			$user_login_name=trim($this->post('user_login_name'));
 			$password=$this->post('password');
 			$user_id=$this->user_model->chechUserExist($user_login_name,$password);
-			echo $user_id;
 			$listArr=array();
 			if($user_id > 0)
 			{

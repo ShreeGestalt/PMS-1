@@ -16,7 +16,8 @@ angular.module('pmsApp').factory('addtestDropdown', ['$resource', 'apiUrl', func
           sample:$resource(apiUrl.sample, {}),
           methode:$resource(apiUrl.methode, {}),
           group:$resource(apiUrl.group, {}),
-          flag:$resource(apiUrl.flag, {})
+          flag:$resource(apiUrl.flag, {}),
+          updatetest:$resource(apiUrl.updatetest, {})
         };
       /*
        return{

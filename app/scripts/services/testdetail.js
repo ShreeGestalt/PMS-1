@@ -7,6 +7,15 @@
  * # testdetail
  * Service in the pmsApp.
  */
-angular.module('pmsApp').service('testdetail', ['$resource', 'apiUrl', function ($resource, apiUrl) {
+
+/*angular.module('pmsApp').service('testdetail', ['$resource', 'apiUrl', function ($resource, apiUrl) {
 	return $resource( apiUrl.testdetails, {} );
+}]); */
+
+angular.module('pmsApp').service('testdetail', ['$resource', 'apiUrl', function ($resource, apiUrl) {
+	return{
+     		searchPatient:$resource( apiUrl.searchPatient, {} ),
+     		getTest:$resource( apiUrl.getTest, {} ),
+     		selectTest:$resource(apiUrl.selectTest, {})
+    };
 }]);

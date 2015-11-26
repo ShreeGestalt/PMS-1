@@ -1,0 +1,187 @@
+
+getTestType
+==============
+URL --> http://localhost/PMS-1/services/index.php/common/getTestType
+* method = get
+
+Response:
+{"status":"success","messege":"ok","list":[{"test_type_ID":"1","test_type":"Profile"},{"test_type_ID":"2","test_type":"Test"},{"test_type_ID":"3","test_type":"Descriptive Test"}]}
+
+***********************************************************************************************
+
+getTestTypeDetails
+==============
+URL --> http://localhost/PMS-1/services/index.php/common/getTestTypeDetails?test_type_ID=2
+* method = get
+* test_type_ID = 2
+
+Response:
+
+{
+  "status": "success",
+  "messege": "ok",
+  "list": {
+    "test_type": "Test",
+    "testTypeDetails": [
+      {
+        "test_id": "1",
+        "test_name": "T3 ",
+        "test_heading": "",
+        "test_short_name": "T3 ",
+        "test_amount": "100.00",
+        "test_remark": "This is T3 Test",
+        "flag_id": "1",
+        "flag_name": "AA",
+        "percent": "10.00",
+        "amount": "0.00",
+        "generic_method_id": "1",
+        "generic_method_name": "ELISA",
+        "generic_sample_id": "1",
+        "generic_sample_name": "Serum",
+        "generic_instrument_id": "1",
+        "generic_instrument_name": "instrument-1"
+      },
+      {
+        "test_id": "5",
+        "test_name": "T2 ",
+        "test_heading": "",
+        "test_short_name": "T2",
+        "test_amount": "200.00",
+        "test_remark": "This is T2 Test",
+        "flag_id": "1",
+        "flag_name": "AA",
+        "percent": "10.00",
+        "amount": "0.00",
+        "generic_method_id": "1",
+        "generic_method_name": "ELISA",
+        "generic_sample_id": "1",
+        "generic_sample_name": "Serum",
+        "generic_instrument_id": "1",
+        "generic_instrument_name": "instrument-1"
+      },
+      {
+        "test_id": "6",
+        "test_name": "T1 ",
+        "test_heading": "",
+        "test_short_name": "T1",
+        "test_amount": "300.00",
+        "test_remark": "This is T1 Test",
+        "flag_id": "1",
+        "flag_name": "AA",
+        "percent": "10.00",
+        "amount": "0.00",
+        "generic_method_id": "1",
+        "generic_method_name": "ELISA",
+        "generic_sample_id": "1",
+        "generic_sample_name": "Serum",
+        "generic_instrument_id": "1",
+        "generic_instrument_name": "instrument-1"
+      }
+    ]
+  }
+}
+
+***********************************************************************************************
+
+searchPatient
+==============
+URL -->  http://localhost/PMS-1/services/index.php/common/searchPatient?searchString=abc
+* method = get
+* searchString = searchString
+
+Response:
+{
+  "status": "success",
+  "messege": "ok",
+  "list": [
+    {
+      "patient_id": "3",
+      "patient_name": "abc",
+      "patient_address": "shivaji nagar",
+      "patient_state": "4",
+      "patient_distric": "2",
+      "patient_city": "3",
+      "patient_dob": "0000-00-00",
+      "patient_gender": null,
+      "patient_phone": "5555",
+      "patient_mobile": "99",
+      "patient_email": "abc@gmail.com"
+    }
+  ]
+}
+
+***********************************************************************************************
+
+getPatientById
+==============
+URL -->  http://localhost/PMS-1/services/index.php/common/getPatientById?patient_id=2
+* method = get
+* patient_id = patient_id
+
+Response:
+{
+  "status": "success",
+  "messege": "ok",
+  "list": {
+    "patient_id": "2",
+    "patient_name": "indrajit",
+    "patient_address": "kothrud",
+    "patient_state": "1",
+    "patient_distric": "2",
+    "patient_city": "2",
+    "patient_dob": "0000-00-00",
+    "patient_gender": "Male",
+    "patient_phone": "2044455",
+    "patient_mobile": "92",
+    "patient_email": "indra@gmail.com"
+  }
+}
+
+***********************************************************************************************
+
+updateTest
+==============
+URL -->  http://localhost/PMS-1/services/index.php/common/updateTest
+* method = post
+
+ "test_id": "6",
+        "test_name": "T1 ",
+        "test_heading": "",
+        "test_short_name": "T1",
+        "test_amount": "300.00",
+        "test_remark": "This is T1 Test",
+        "flag_id": "1",
+              "generic_method_id": "1",
+               "generic_sample_id": "1",
+        "generic_instrument_id": "1",
+
+
+
+Response:
+=========
+{
+  "status": "success",
+  "messege": "ok",
+  "list": {
+    "patient_id": "2",
+    "patient_name": "indrajit",
+    "patient_address": "kothrud",
+    "patient_state": "1",
+    "patient_distric": "2",
+    "patient_city": "2",
+    "patient_dob": "0000-00-00",
+    "patient_gender": "Male",
+    "patient_phone": "2044455",
+    "patient_mobile": "92",
+    "patient_email": "indra@gmail.com"
+  }
+}
+
+
+
+
+
+
+
+
+

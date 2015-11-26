@@ -15,8 +15,12 @@ angular.module('pmsApp')
       link: function postLink() {
         //element.text('this is the navigationDir directive');
       },
-      controller: function($scope) {
+      controller: function($scope,$location) {
         $scope.isLogin = false;
+        $scope.logout = function() {
+          $scope.isLogin = false;
+          $location.path('login');
+        };
       }
     };
   });

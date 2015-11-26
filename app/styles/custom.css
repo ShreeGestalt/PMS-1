@@ -113,3 +113,12 @@
   box-shadow:0 0 4px #222 inset;
   opacity:2
 }
+.display-grid {
+  margin-top: 8%;
+}
+.display-alert {
+  cursor: pointer;
+}
+.login-view {
+  padding-top: 4%;
+}

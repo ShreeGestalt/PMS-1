@@ -1,0 +1,134 @@
+<div class="container" style="padding-top:30px">
+	<div class="col-mod-12">
+		<ul class="breadcrumb">
+			<li><a href="" ng-click="onBackPressHome()">Home</a></li>
+			<li><a href="" ng-click="onBackPress()">Device Dashboard</a></li>
+			<li><a href="" ng-click="">Users Group</a></li>
+		</ul>
+	</div>
+
+	<div>
+		<div>
+			<h3>{{customerID}} User Groups</h3>
+			<button type="button" class="btn btn-default btn-lg pull-right" ng-click="showCreateModal();" title="Add User Groups">
+				<span class="glyphicon glyphicon-plus-sign"></span>
+			</button>
+		</div>
+
+		<div id="lodingdiv-custTable">
+			<img src="../img/loading1.gif" class="ajax-loader"/>
+		</div>
+       
+		<table class="table table-striped table-bordered table-hover" border="2">
+			<thead class="dashboard-theading bg-primary">  
+				<tr>  
+					<th>Sr. No.</th>
+					<th>Local Names</th>  
+					<th>Edit</th>  
+					<th>Delete</th>
+				</tr>  
+			</thead>  
+			<tbody>
+        <!-- <tr ng-repeat="data in allUsersGroupDataArray | filter:selectedFilter"> -->
+				<tr ng-repeat="data in allUsersGroupDataArray">
+					<td>{{$index+1}}</td>
+					<td>{{data.local_name}}</td>
+					<td ng-click="showUpdateModal(data.name,$index);" class="cust-tabel-icon" align="center" title="Edit User Group"><span class="glyphicon glyphicon-edit"></span></td> 
+					<td ng-click="showDeleteModal(data.name)" class="cust-tabel-icon" align="center" title="Delete User Group"><span class="glyphicon glyphicon-trash"></span></td> 
+				</tr> 		      
+			</tbody>  
+		</table>
+		<div id="badTokenResp">{{BAD_TOKEN_RESP}}</div>
+	</div>
+
+	  <!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">{{modalTitle}}</h4>
+        </div>
+        <div class="modal-body">            
+            <form class="form-horizontal" role="form">
+          
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-3 control-label" id="label-custome">Group name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" placeholder="Name" ng-model="deviceGroup_name">
+            </div>
+          </div>             
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-3 control-label" id="label-custome1">Local name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" placeholder="local name" ng-model="deviceGroup_localname">
+            </div>
+          </div> 
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-3 control-label" id="label-custome2">Group type</label>
+            <div class="col-sm-9">
+              <select class="form-control" ng-model="deviceGroup_type">
+                <option>grid</option>
+                <option>graph</option>                   
+              </select>
+            </div>
+          </div> 
+
+        <div class="panel panel-default invDashboard_list-of-group">
+
+        <table class="table table-striped table-bordered table-hover" border="2">
+          <thead class="dashboard-theading bg-primary">        <!-- Add class bg-primary by PP -->
+            <tr>  
+              <th>Sr. No.</th>
+              <th>firmware name</th> 
+              <th>Choice</th>  
+            </tr>  
+          </thead>  
+          <tbody>  
+            <tr ng-repeat="data in userGroupsArray">  
+              <td>{{$index+1}}</td>
+              <td>{{data.display_name}}</td>
+              <td>
+                <input type="checkbox" value="remember-me" ng-model="data.isValue">
+              </td>
+            </tr>           
+          </tbody>  
+        </table>
+      </div>
+
+        </form>
+        <div id="lodingdiv-addCust">
+          <img src="../img/loading1.gif" class="ajax-loader"/>
+          Saving group...
+        </div>
+        <span id="validateMsg"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button ng-show="currOperation" type="button" class="btn btn-default" ng-click="createUserGroup();">Save changes</button>
+          <button ng-hide="currOperation" type="button" class="btn btn-default" ng-click="updateUsersGroup();">Update changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="modal_delete_user" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header bg-primary">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Delete Group</h4>
+	      </div>
+	      <div class="modal-body">
+	        Do you really want to delete?..
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal"> No </button>
+	        <button type="button" class="btn btn-primary" ng-click="deleteUsers()">Yes</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+   
+   </div>      

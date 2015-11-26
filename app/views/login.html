@@ -1,52 +1,59 @@
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-5 login-box">
-        <div class="panel panel-default">
-          <div class="panel-intro text-center">
-            <a href="index.html">
-              <img src="http://digitalapproach.in/images/logo.c1910e4a.png" style="width:60%">
-            </a>
-          </div>
-          <div class="panel-body">
-            <form name="loginForm" role="form" ng-submit="loginSubmit()">
-              <div class="form-group required" ng-class="{'has-error': loginForm.userphone.$touched && loginForm.userphone.$error.required}">
-                <label for="sender-email" class="control-label">Username:</label>
-                <div class="input-icon">
-                  <i class="fa fa-user"></i>
-                  <input name="userphone" id="sender-email" type="text" placeholder="Username" class="form-control email" ng-model="user.username" required>
-                </div>
-              </div>
-              <div class="form-group required" ng-class="{'has-error': loginForm.userpassword.$touched && loginForm.userpassword.$error.required}">
-                <label for="user-pass" class="control-label">Password:</label>
-                <div class="input-icon">
-                  <i class="fa fa-lock"></i>
-                  <input name="userpassword" type="password" class="form-control" placeholder="Password" id="user-pass" ng-model="user.password" required>
-                </div>
-              </div>
-              <div class="form-group">
+<div class="container login-view">
+  <div class="row">
+    <section class="error-section" >  
+      <div class="row">
+        <div>
+          <uib-alert ng-repeat="alert in alerts" class="display-alert" type="{{alert.type}}" close="closeAlert($index)" ng-click="closeAlert($index)" id="display-error-home">{{alert.msg}}</uib-alert>
+        </div>
+      </div>
+    </section>
 
-                <input type="submit" value="Login" class="btn btn-primary btn-block" href ng-disabled="loginForm.$invalid"/>
+    <div class="col-lg-offset-2 col-sm-5 login-box">
+      <div class="panel panel-default">
+        <div class="panel-intro text-center">
+          <a href="index.html">
+            <img src="http://digitalapproach.in/images/logo.c1910e4a.png" style="width:60%">
+          </a>
+        </div>
+        <div class="panel-body">
+          <form name="loginForm" role="form" ng-submit="loginSubmit()">
+            <div class="form-group required" ng-class="{'has-error': loginForm.userphone.$touched && loginForm.userphone.$error.required}">
+              <label for="sender-email" class="control-label">Username:</label>
+              <div class="input-icon">
+                <i class="fa fa-user"></i>
+                <input name="userphone" id="sender-email" type="text" placeholder="Username" class="form-control email" ng-model="user.username" required>
               </div>
-            </form>
-          </div>
-          <div class="panel-footer">
-            <!-- <span class="pull-left">
-              <input type="checkbox" value="1" name="remember" id="remember">Keep me logged in
-            </span> -->
-            <p class="text-center pull-right">
-              <a href="forgot-password.html"> Lost your password? </a>
-            </p>
-            <div style="clear:both"></div>
-          </div>
+            </div>
+            <div class="form-group required" ng-class="{'has-error': loginForm.userpassword.$touched && loginForm.userpassword.$error.required}">
+              <label for="user-pass" class="control-label">Password:</label>
+              <div class="input-icon">
+                <i class="fa fa-lock"></i>
+                <input name="userpassword" type="password" class="form-control" placeholder="Password" id="user-pass" ng-model="user.password" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Login" class="btn btn-primary btn-block" href ng-disabled="loginForm.$invalid"/>
+            </div>
+          </form>
         </div>
-        <div class="login-box-btm text-center">
-          <p>Don't have an account?
-            <br>
-            <a ui-sref="sign-up">
-              <strong>Sign Up !</strong>
-            </a>
+        <div class="panel-footer">
+          <!-- <span class="pull-left">
+            <input type="checkbox" value="1" name="remember" id="remember">Keep me logged in
+          </span> -->
+          <p class="text-center pull-right">
+            <a href="forgot-password.html"> Lost your password? </a>
           </p>
+          <div style="clear:both"></div>
         </div>
+      </div>
+      <div class="login-box-btm text-center">
+        <p>Don't have an account?
+          <br>
+          <a ui-sref="sign-up">
+            <strong>Sign Up !</strong>
+          </a>
+        </p>
       </div>
     </div>
   </div>
+</div>

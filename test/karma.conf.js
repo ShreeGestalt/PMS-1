@@ -38,6 +38,7 @@ module.exports = function(config) {
       'bower_components/pdfmake/index.js',
       'bower_components/vfs_fonts/index.js',
       'bower_components/CSV-JS/csv.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

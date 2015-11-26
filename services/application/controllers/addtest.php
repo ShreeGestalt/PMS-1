@@ -7,7 +7,7 @@ class addtest extends CosRestController
   public function index_get()
   {
     $this->load->database();
-    $this->db->select('test_id AS id, test_name AS name, test_heading AS heading, test_short_name AS shortname, test_remark AS remark, flag_id AS flg, method_id AS mthd, sample_id AS smpl, instrumernt_id AS instrument, test_amount AS charges, groups_id AS grp');  //csId
+    $this->db->select('test_id AS id, test_name AS name, test_heading AS heading, test_short_name AS shortname, test_remark AS remark, flag_id AS flg, method_id AS mthd, sample_id AS smpl, instrument_id AS instrument, test_amount AS charges, group_id AS grp');  //csId
     $this->db->distinct();
     $this->response(array("data" => $this->db->get('test_master')->result()));  //cosUsers
   }

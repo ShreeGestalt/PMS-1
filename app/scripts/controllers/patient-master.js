@@ -15,7 +15,7 @@ angular.module('pmsApp')
       { id: '2',gender:'Female'},
       ];
 
-      init();      
+      
       
 
       $scope.add = function() {
@@ -110,37 +110,36 @@ angular.module('pmsApp')
     var removeData = {
       patientId: deleteData.id,
       status: 'delete',
-    }
+    };
     
     patientMaster.patient.save(angular.toJson(removeData), function(responce) {
       console.log(responce);
     });
   };
 
-  $scope.saveRow = function(rowEntity) {
-    patientMaster.patient.save(angular.toJson(rowEntity), function(responce) {
-      $scope.gridOptions = responce.data[0];
-    });
-    
-  };
-
-  $scope.singleFilter = function( renderableRows ){
-    console.log("in single filter");
-    var matcher = new RegExp($scope.filterValue);
-    renderableRows.forEach( function( row ) {
-      var match = false;
-      [ 'id', 'name', 'address', 'city', 'dob', 'gender', 'mobile', 'email','Action' ].forEach(function( field ){
-        if ( row.entity[field].match(matcher) ){
-          match = true;
-        }
+    $scope.saveRow = function(rowEntity) {
+      patientMaster.patient.save(angular.toJson(rowEntity), function(responce) {
+        $scope.gridOptions = responce.data[0];
       });
-      if ( !match ){
-        row.visible = false;
-      }
-    });
-    return renderableRows;
-  };
+      
+    };
 
+      $scope.singleFilter = function( renderableRows ){
+        console.log("in single filter");
+        var matcher = new RegExp($scope.filterValue);
+        renderableRows.forEach( function( row ) {
+          var match = false;
+          [ 'id', 'name', 'address', 'city', 'dob', 'gender', 'mobile', 'email','Action' ].forEach(function( field ){
+            if ( row.entity[field].match(matcher) ){
+              match = true;
+            }
+          });
+          if ( !match ){
+            row.visible = false;
+          }
+        });
+        return renderableRows;
+      };
      
     }
 
@@ -153,11 +152,7 @@ angular.module('pmsApp')
       $scope.districts = record.data;
     }); */
 
-    
-  
- 
-   
 
-
+  init();
     
-  }]);
+}]);

@@ -2608,7 +2608,7 @@ blockquote.page-information p {
   font-size: 14px;
   font-weight: normal;
 }
-.modal {
+/*.modal {
   position: fixed;
   top: 0;
   margin-top: 100px;
@@ -2616,7 +2616,7 @@ blockquote.page-information p {
   bottom: 0;
   left: 0;
   z-index: 1040;
-}
+}*/
 /* Profile page
 ---------------------------------------------------------------------------------------------- */
 .profile .user-details {
@@ -2952,7 +2952,7 @@ ul.icheck-buttons > li {
 .modal-open {
   overflow: hidden;
 }
-.modal {
+/*.modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -2962,8 +2962,8 @@ ul.icheck-buttons > li {
   display: none;
   overflow: auto;
   overflow-y: scroll;
-}
-.modal.fade .modal-dialog {
+}*/
+/*.modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
   transform: translate(0, -25%);
@@ -3072,3 +3072,4 @@ ul.icheck-buttons > li {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
 }
+*/

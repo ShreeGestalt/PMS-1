@@ -21,7 +21,7 @@
               <label for="sender-email" class="control-label">Username:</label>
               <div class="input-icon">
                 <i class="fa fa-user"></i>
-                <input name="userphone" id="sender-email" type="text" placeholder="Username" class="form-control email" ng-model="user.username" required>
+                <input name="userphone" id="sender-email" type="text" placeholder="Username" class="form-control email" ng-model="user.username" required autofocus>
               </div>
             </div>
             <div class="form-group required" ng-class="{'has-error': loginForm.userpassword.$touched && loginForm.userpassword.$error.required}">

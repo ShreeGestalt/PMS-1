@@ -54,7 +54,17 @@ class Common_model extends CI_Model
 	
 	function getTestTypeDetails($id)
 	{
-	   $sql="select tm.`test_id`, tm.`test_name`, tm.`test_heading`, tm.`test_short_name`, tm.`test_amount`, tm.`test_remark`
+	if($id==1)
+	{
+		 $sql="select  pm.`profile_id`,pm.`profile_name`, pm.`profile_charges`, pm.`profile_code`, fm.`flag_id`,fm.`flag_name`,fm.`percent`, fm.`amount` from profile_master as pm left join flag_master as fm on(pm.`flag_id`=fm.`flag_id`)  
+group by pm.`profile_id`";
+	
+			
+	}
+	else if($id==2)
+	{
+	
+	 $sql="select tm.`test_id`, tm.`test_name`, tm.`test_heading`, tm.`test_short_name`, tm.`test_amount`, tm.`test_remark`
 ,fm.`flag_id`,fm.`flag_name`,fm.`percent`, fm.`amount`,gmm.`generic_method_id`, gmm.`generic_method_name`, gsm.`generic_sample_id`, gsm.`generic_sample_name`,gim.`generic_instrument_id`,gim.`generic_instrument_name`
  from test_master as tm left join flag_master as fm on(tm.`flag_id`=fm.`flag_id`)  
 left join generic_method_master as gmm  on(tm.`method_id`=gmm.`generic_method_id`)  
@@ -62,6 +72,15 @@ left join generic_sample_master as gsm on(tm.`sample_id` = gsm.`generic_sample_i
 left join generic_instrument_master as gim on(tm.`instrument_id` = gim.`generic_instrument_id`)
 group by tm.`test_id`";
 	
+	}
+	else
+	{
+		 $sql="select  `desc_test_id`, `desc_test_name`, `desc_test_detail`, `desc_test_amount` from descriptive_test";
+	
+	
+	}
+	
+	  
 		$query = $this->db->query($sql);
 		return $query->result();
 	}

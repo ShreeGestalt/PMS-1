@@ -22,7 +22,8 @@ angular.module('pmsApp').controller('TestMasterDetailsCtrl',['$scope', '$http','
     		{name: 'generic_sample_name'},
     		{name: 'generic_instrument_name'},
     		{name: 'amount'},
-        { name: 'Action', enableCellEdit: false, cellTemplate:'<button class="btn primary" ng-click="grid.appScope.open(row.entity)"><span class="glyphicon glyphicon-pencil"></span></button>'}
+        { name: 'Action', enableCellEdit: false, cellTemplate:'<button class="btn primary" ng-click="grid.appScope.open(row.entity)"><span class="glyphicon glyphicon-pencil"></span></button><button class="btn primary" ng-click="grid.appScope.deleteRecord(row.entity)"><span class="glyphicon glyphicon-trash"></span></button>'}
+        
     	]
     };
     function init() {
@@ -147,6 +148,25 @@ angular.module('pmsApp').controller('TestMasterDetailsCtrl',['$scope', '$http','
 
   $scope.toggleAnimation = function () {
     $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+
+  $scope.deleteRecord = function(deleteData){
+    $scope.alerts = [];
+    var removeData = {
+      testid: deleteData.test_id,
+      rowId: deleteData.row_id
+    };
+     addtestDropdown.updatetest.save(angular.toJson(removeData), function(responce) {
+      if(responce.data.message === 'Row deleted successfully') {
+        angular.forEach($scope.categoryData, function(value, key) {
+          if(value.row_id === deleteData.row_id) {
+            $scope.categoryData.splice(key);    
+          }
+        });
+        $scope.gridOptions.data = $scope.categoryData;
+        $scope.alerts.push({msg: 'Record deleted successfully', type:'success'});
+      }
+    });
   };
 
 }]);

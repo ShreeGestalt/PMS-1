@@ -1,20 +1,31 @@
 <div class="flag_master"> 
     <form name="flag" ng-submit="addFlag()">
-        <center><h3>ADD FLAG</h3></center>      
-          <div class="form-group">
-            <label for="inputdefault">FLAG NAME</label>
-            <input capitalize class="form-control input-sm" ng-model="flag.name" id="inputdefault" >
+        <h1 style="color:blue">ADD FLAG</h1>
+        <hr>     
+          <form role="form-inline">
+            <div class="col-md-12">
+              <div class="form-group clearfix">
+                  <label class="control-label col-sm-3" for="inputdefault">Flag name:</label>
+                  <div class="col-sm-9">
+                      <input placeholder='Flag Name' capitalize class="form-control input-sm" ng-model="flag.name" id="inputdefault" >
+                  </div>
+              </div>
+              <div class="form-group clearfix">
+                <label class="control-label col-sm-3" for="inputdefault">Percent:</label>
+                  <div class="col-sm-9">
+                      <input placeholder='%'capitalize class="form-control input-sm" input type="number" ng-model="flag.percent" id="inputdefault" >
+                  </div>
+              </div>
+              <div class="form-group clearfix">
+                <label class="control-label col-sm-3" for="inputdefault">Amount:</label>
+                <div class="col-sm-9">
+                      <input placeholder='00' capitalize class="form-control input-sm" input type="number" ng-model="flag.amount" id="inputdefault" >
+                </div>
           </div>
-          <div class="form-group">
-            <label for="inputdefault">PERCENT</label>
-            <input capitalize class="form-control input-sm" input type="number" ng-model="flag.percent" id="inputdefault" >
+          <div class="col-md-12" style="text-align:center; margin-bottom:15px;">
+            <button type="submit" class="btn btn-primary">SUBMIT</button>                    
+            <button type="button" class="btn btn-warning">RESET</button>
           </div>
-          <div class="form-group">
-            <label for="inputdefault">AMOUNT</label>
-            <input capitalize class="form-control input-sm" input type="number" ng-model="flag.amount" id="inputdefault" >
-          </div>
-        <button type="submit" class="btn btn-primary">SUBMIT</button>                    
-        <button type="button" class="btn btn-warning">RESET</button>
     </form>
-	<div ui-grid="myData" class="myGrid"></div><!-- Grid -->
+	<div ui-grid="myData" class="myGrid" style="clear:both; margin-top: 15px;"></div><!-- Grid -->
 </div>

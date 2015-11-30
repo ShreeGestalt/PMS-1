@@ -99,8 +99,10 @@ angular.module('pmsApp').controller('workflowCtrl', ['$scope', 'testdetail', fun
   };
 
   $scope.selectTest = function() {
+    var test = [];
+    console.log($scope.content);
     testdetail.selectTest.get({test_type_ID:$scope.content}, function(responce) {
-      console.log(responce);
+      $scope.test = responce.list.testTypeDetails;
     });
   };
 }]);

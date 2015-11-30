@@ -1,79 +1,65 @@
 <div class="Add-test">
 	<div class="container">
-  		<h2>Add test</h2>
+  		<h2 style="color:blue">Add test</h2>
+  		<hr>
   		<!-- Trigger the modal with a button -->
  		<div class="form-group">
 			<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal" data-backdrop="true" data-keyboard="true">Test Details</button>
 
-			 <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal1" data-backdrop="true" data-keyboard="true">Test Details</button>
-			
+			<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal1" data-backdrop="true" data-keyboard="true">Test Details</button>
 
-
-
-	<hr class="devider">
-		<div class="form-group"> 
-			<!-- Grid -->
-			<div ng-controller = "TestMasterDetailsCtrl">
-				<div ui-grid="myData" class="myGrid"></div>
+			<div class="form-group" style="margin-top:15px;"> 
+				<div ng-controller = "TestMasterDetailsCtrl">
+					<div ui-grid="myData" class="myGrid"></div>
+				</div>
 			</div>
-			<!-- -->
-		</div>
-
 			 
-<!--modal for update-->
-<script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title">Add New Test</h3>
-        </div>
-        <div class="modal-body">
-        	<h1></h1>
-      			<div class="form-group">
-  					
-  					<h4>test id</h4>
-			    	<input type="text" class="form-control" ng-model="test.test_id">
+			<!--modal for update-->
+			<script type="text/ng-template" id="myModalContent.html">
+		        <div class="modal-header">
+		            <h3 class="modal-title">Add New Test</h3>
 		        </div>
-		        
-  
-  				<div class="form-group">
-  					
-  					<h4><span class="label label-default">Test Name:</span></h4>
-			    	<input type="text" class="form-control" ng-model="test.test_name">
-		        </div>
-		        
-		    
+		        <div class="modal-body">
+	      			<div class="form-group">
+	  					<h4>test id</h4>
+				    	<input type="text" class="form-control" ng-model="test.test_id">
+			        </div>
+			        
+	  				<div class="form-group">
+	  					<h4><span class="label label-default">Test Name:</span></h4>
+				    	<input type="text" class="form-control" ng-model="test.test_name">
+			        </div>
+				    
                     <div class="form-group">     
 	            		<h4><span class="label label-default">Group:</span></h4>
 					 	<input type="text" class="form-control" ng-model="test.group">
 			      	</div>
 
-		            
-
 		            <div class="form-group">	          
-			             <h4><span class="label label-default">Heading:</span></h4>
+			            <h4><span class="label label-default">Heading:</span></h4>
 			            <input type="text" class="form-control" ng-model="test.test_heading">
 		            </div>
 
 		            <div class="form-group">
-						 <h4><span class="label label-default">Test Code:</span></h4>
+						<h4><span class="label label-default">Test Code:</span></h4>
 				 		<input type="text" class="form-control" ng-model="test.test_short_name">
 		          	</div>
 
 	                <div class="form-group">
 						<h4><span class="label label-default">Test Charges:</span></h4>
 				 		<input type="text" class="form-control" ng-model="test.amount">
-				 		</div>
-				 		<div class="form-group">
-				 		     <h4><span class="label label-default">flag</span></h4>
-		            		<input type="text" class="form-control" ng-model="test.flag_name">
-						 </div>
-		         
-
-			    
+				 	</div>
+			 		
+			 		<div class="form-group">
+			 		    <h4><span class="label label-default">flag</span></h4>
+	            		<input type="text" class="form-control" ng-model="test.flag_name">
+					</div>
+					    
 			    	<div class="form-group">     
 						<h4><span class="label label-default">Method:</span></h4>
 						<input type="text" class="form-control" ng-model="test.generic_method_name">
-						
 					</div>
+							
 					<div class="form-group">
 						<h4><span class="label label-default">Sample:</span></h4>
 						<input type="text" class="form-control" ng-model="test.generic_sample_name" >
@@ -83,254 +69,269 @@
 						<h4><span class="label label-default">Instrument:</span></h4>
 						<input type="text" class="form-control" ng-model="test.generic_instrument_name">
 					</div>
+						    
 				    <div class="form-group">
              			<h4><span class="label label-default">Remark:</span></h4>
                         <textarea class="form-control custom-control" rows="8" ng-model="test.test_remark" style="resize:none" ></textarea>
 					</div>
 					<button type="button" class="btn btn-success" ng-click="update()">Save</button>
                 	<button type="button" class="btn btn-danger" ng-click="oldpatient">Clear</button>
-
-			
-    		</div>
-
-  		</div>
-           
-        </div>
-        
-    </script>
-
-   
-
-
-
+		    	</div>
+			</script>
 		</div>
 		
 		<!-- Modal -->
-  		<div class="modal fade modal-white" id="myModal" role="dialog">
-    		<div class="modal-dialog model-lg">
+  		<div class="modal fade modal-white" id="myModal" role="dialog" style="z-index: 999999">
+    		<div class="modal-dialog model-lg" style='margin:10px;'>
     		
-    
+    			<!--header-->
+    			<div class="modal-header" style="padding:10px;">
+		        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+		          	<h1 style="color: blue" class="modal-title">Add New Test</h1>
+	        	</div>
       			<!-- Modal content-->
-      			<h1>Add New Test</h1>
-      			
-  				<div class="col-md-6"> 
-  
-  				<div class="form-group">
-  					
-  					<h4><span class="label label-default">Test Name:</span></h4>
-			    	<input type="text" class="form-control" ng-model="tstname" id="121">
-		        </div>
-		        
-		    
-                    <div class="form-group">     
-	            		<h4><span class="label label-default">Group:</span></h4>
-					 	<select class="selectpicker form-control" ng-model="selectedgrp" ng-options="groups.name for groups in group">
-							 
-					 	</select>
-					 	 <button type="button" class="btn btn-success btn-xs">ADD Group</button>
-			      	</div>
+      			<div class="col-md-12">
+  					<div class="form-group clearfix" style="margin-top:15px;">
+  						<label class="control-label col-sm-3">Test Name:</label>
+			    		<div class="col-sm-9">
+			    			<input placeholder="Test name" type="text" class="form-control" ng-model="tstname" id="121">
+			    		</div>
+		        	</div>
+		        	<div class="form-group clearfix">     
+            			<label class="control-label col-sm-3">Group:</label>
+				 		<div class="col-sm-9">
+					 		<select style="width:60%; display:inline-block;" class="selectpicker form-control" ng-model="selectedgrp" ng-options="groups.name for groups in group">
+					 		</select>
+					 		<button type="button" class="btn btn-success btn-xs">ADD Group</button>
+				 		</div>
+		      		</div>
 
-		            
+		        	<div class="form-group clearfix">	          
+			        	<label class="control-label col-sm-3">Heading:</label>
+			        	<div class="col-sm-9">
+			        		<input placeholder="Heading" type="text" class="form-control" ng-model="hding" id="123">
+			        	</div>
+		        	</div>
 
-		            <div class="form-group">	          
-			             <h4><span class="label label-default">Heading:</span></h4>
-			            <input type="text" class="form-control" ng-model="hding" id="123">
-		            </div>
+	            	<div class="form-group clearfix">
+						<label class="control-label col-sm-3">Test Code:</label>
+			 			<div class="col-sm-9">
+			 				<input placeholder="Test code" type="text" name="input" class="form-control" ng-model="tc" min="0" max="99"/>
+			 			</div>
+	          		</div>
 
-		            <div class="form-group">
-						 <h4><span class="label label-default">Test Code:</span></h4>
-				 		<input type="text" name="input" class="form-control" ng-model="tc" min="0" max="99"/>
-		          	</div>
+                	<div class="form-group clearfix">
+						<label class="control-label col-sm-3">Test Charges:</label>
+			 			<div class="col-sm-9">
+			 				<input placeholder="00" type="text" name="input" class="form-control" ng-model="tch" />
+			 			</div>
+			 		</div>
 
-	                <div class="form-group">
-						<h4><span class="label label-default">Test Charges:</span></h4>
-				 		<input type="text" name="input" class="form-control" ng-model="tch" />
-				 		<div class="form-group">     
-		            		<h4><span class="label label-default">Flag:</span></h4>
-						 	<select class="selectpicker form-control" ng-model="selectedflag" ng-options="flags.name for flags in flag">
-								 
+				 	<div class="form-group clearfix">     
+		            	<label class="control-label col-sm-3">Flag:</label>
+						<div class="col-sm-9">
+						 	<select style="width: 60%; display:inline-block;" class="selectpicker form-control" ng-model="selectedflag" ng-options="flags.name for flags in flag">
 						 	</select>
-						 	 <button type="button" class="btn btn-success btn-xs">ADD Falg</button>
-				    	</div>
-		          	</div>
+						 	<button type="button" class="btn btn-success btn-xs">ADD Falg</button>
+						</div>
+				    </div>
+
+			    	<div class="form-group clearfix">     
+						<label class="control-label col-sm-3">Method:</label>
+						<div class="col-sm-9">
+							<select style="width:60%; display:inline-block" class="selectpicker form-control" ng-model="selectedmthd" ng-options="mthd.name for mthd in methode">
+							</select>
+							<button type="button" class="btn btn-success btn-xs"
+								data-toggle="modal" data-target="#myModal1" data-backdrop="true" data-keyboard="true">ADD Flag</button>
+						</div>
+					</div>
+
+					<div class="form-group clearfix">
+						<label class="control-label col-sm-3">Sample:</label>
+						<div class="col-sm-9">
+							<select style="width:60%; display:inline-block;" class="selectpicker form-control" ng-model="selectedsmpl" ng-options="samples.name for samples in sample">
+							</select>
+				        	<button type="button" class="btn btn-success btn-xs">ADD Sample</button>
+				        </div>
+					</div>
+
+					<div class="form-group clearfix">
+						<label class="control-label col-sm-3">Instrument:</label>
+						<div class="col-sm-9">
+							<select style="width:60%; display:inline-block;" class="selectpicker form-control" ng-model="selectedinstmt" ng-options="names.name for names in instrument">
+								
+					        </select>
+					        <button type="button" class="btn btn-success btn-xs">ADD instruments</button>
+					    </div>
+					</div>
+
+					<div class="form-group clearfix">
+             			<label class="control-label col-sm-3">Remark:</label>
+                        <div class="col-sm-9">
+                        	<textarea class="form-control custom-control" rows="8" ng-model="remark" style="resize:none"></textarea>
+                        </div>
+					</div>
+
 				</div>
 
-			    <div class="col-md-6"> 
-			    	<div class="form-group">     
-						<h4><span class="label label-default">Method:</span></h4>
-						<select class="selectpicker form-control" ng-model="selectedmthd" ng-options="mthd.name for mthd in methode">
-							
-						</select>
-						<button type="button" class="btn btn-success btn-xs"
-							data-toggle="modal" data-target="#myModal1" data-backdrop="true" data-keyboard="true">ADD METHOD</button>
-					</div>
-					<div class="form-group">
-						<h4><span class="label label-default">Sample:</span></h4>
-						<select class="selectpicker form-control" ng-model="selectedsmpl" ng-options="samples.name for samples in sample">
-							
-						</select>
-				        <button type="button" class="btn btn-success btn-xs">ADD SAMPLE</button>
-					</div>
-
-					<div class="form-group">
-						<h4><span class="label label-default">Instrument:</span></h4>
-						<select class="selectpicker form-control" ng-model="selectedinstmt" ng-options="names.name for names in instrument">
-							
-				        </select>
-				        <button type="button" class="btn btn-success btn-xs">ADD INSTRUMENT</button>
-					</div>
-				    <div class="form-group">
-             			<h4><span class="label label-default">Remark:</span></h4>
-                        <textarea class="form-control custom-control" rows="8" ng-model="remark" style="resize:none"></textarea>
-					</div>
-					<button type="button" class="btn btn-success" ng-click="add()">Save</button>
+			    <div class="modal-footer" style="text-align:center;">
+			    	<button type="button" class="btn btn-success" ng-click="add()">Save</button>
                 	<button type="button" class="btn btn-danger" ng-click="oldpatient">Clear</button>
-				</div>
+          			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        		</div>
     		</div>
   		</div>
 
-   		
-
 		<!-- Modal1 -->
-  		<div class="modal fade modal-white" id="myModal1" role="dialog">
-    		<div class="modal-dialog model-lg">
-	    		<!-- Modal content-->
-    			<div class=test-detail>
-    				<h2>Test Detail</h2>
-    				
-    			 		<div class="form-group">     
-		            		<label  class="control-label" for="inputdefault">Select Test</label>:
+  		<div class="modal fade modal-white" id="myModal1" role="dialog" style="z-index:999999">
+    		<div class="modal-dialog model-lg" style='margin:10px;'>
+	    		<!--header-->
+    		 	<div class="modal-header" style="padding:10px;">
+		        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+		          	<h1 style="color: blue" class="modal-title">Test Detail</h1>
+	        	</div>
+	        	<!-- Modal content-->
+    			<div class="col-md-12">    				
+    			 	<div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Select Test:</label>
+						<div class="col-sm-9">
 						 	<select class="selectpicker form-control">
 								<option>example</option>
 								<option>example</option> 
 						 	</select>
-				  		</div>
-
-						
-            			</div>
-
-						<div class="col-md-6"> 
-							<div class="form-group">	          
-			          			<label class="control-label" for="inputdefault">Test details:</label>
-			          			<input type="text"class="form-control" ng-model="td" id="124">
-			          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
-            					<span ng-show="form.first.$error.required">Mandatory Field</span>
-		             		</div>
-
-		             		<div class="form-group">	          
-			          			<label class="control-label" for="inputdefault">Unit:</label>
-			          			<input type="text"class="form-control" ng-model="tstunit" id="124">
-			          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
-            					<span ng-show="form.first.$error.required">Mandatory Field</span>
-		             		</div>
-
-		             		<div class="form-group">	          
-			          			<label class="control-label" for="inputdefault">Min Refrance</label>
-			          			<input type="text" class="form-control" ng-model="minref" id="124">
-			          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
-            					<span ng-show="form.first.$error.required">Mandatory Field</span>
-		             		</div>
-
-		             		<div class="form-group">	          
-			          			<label class="control-label" for="inputdefault">Min Age</label>
-			          			<input type="text" class="form-control" ng-model="mnage" id="124"+>
-			          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
-            					<span ng-show="form.first.$error.required">Mandatory Field</span>
-		             		</div>
-
-		             		<div class="form-group">     
-		            			<label  class="control-label" for="inputdefault">Gender</label>:
-						 		<select class="selectpicker form-control" ng-model="gndr">
-									<option>example</option>
-									<option>example</option> 
-						 		</select>
-				  			</div>
 						</div>
+				  	</div>
+				 
+					<div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Test details:</label>
+			          	<div class="col-sm-9">
+			          		<input type="text"class="form-control" ng-model="td" id="124">
+			          		<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
+            				<span ng-show="form.first.$error.required">Mandatory Field</span>
+            			</div>
+		            </div>
 
-						<div class="col-md-6"> 
-							<div class="form-group">     
-		            			<label  class="control-label" for="inputdefault">Exam Type</label>:
-						 		<select class="selectpicker form-control" ng-model="exmtyp">
-									<option>example</option>
-									<option>example</option> 
-						 		</select>
-				  			</div>
+		            <div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Unit:</label>
+			          	<div class="col-sm-9">
+		          			<input type="text"class="form-control" ng-model="tstunit" id="124">
+		          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
+        					<span ng-show="form.first.$error.required">Mandatory Field</span>
+            			</div>
+		            </div>
 
-						  	<div class="form-group">	          
-			          			<label class="control-label" for="inputdefault">Order:</label>
-			          			<input type="text" class="form-control" ng-model="ordr" id="124">
-			          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
-            					<span ng-show="form.first.$error.required">Mandatory Field</span>
-		             		</div>
+		            <div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Min Refrance:</label>
+			          	<div class="col-sm-9">
+		          			<input type="text" class="form-control" ng-model="minref" id="124">
+		          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
+        					<span ng-show="form.first.$error.required">Mandatory Field</span>
+            			</div>
+		            </div>
 
-	             			<div class="form-group">	          
-			          			<label class="control-label" for="inputdefault">Max Refrance</label>
-			          			<input type="text" class="form-control" ng-model="mxref" id="124">
-			          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
-            					<span ng-show="form.first.$error.required">Mandatory Field</span>
-		             		</div>
+		            <div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Min Age:</label>
+			          	<div class="col-sm-9">
+		          			<input type="text" class="form-control" ng-model="mnage" id="124"+>
+		          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
+        					<span ng-show="form.first.$error.required">Mandatory Field</span>
+            			</div>
+		            </div>
 
-		             		<div class="form-group">	          
-			          			<label class="control-label" for="inputdefault">Max Age</label>
-			          			<input type="text" class="form-control" ng-model="mxage" id="124">
-			          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
-            					<span ng-show="form.first.$error.required">Mandatory Field</span>
-		             		</div>
+		            <div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Gender:</label>
+						<div class="col-sm-9">
+							<select class="selectpicker form-control" ng-model="gndr">
+								<option>example</option>
+								<option>example</option> 
+					 		</select>
+				  		</div>
+				  	</div>
 
-		            		<div class="form-group">	          
-			          			<label class="control-label" for="inputdefault">Min Age</label>
-			          			<input type="text" class="form-control" id="124">
-		             		</div>
-		             		<div class="form-group">
-		             			<button type="button" class="btn btn-success" ng-click="add(val)">Save</button>
-                                <button type="button" class="btn btn-danger" ng-click="oldpatient">Clear</button>
-                            </div>
-    					</div>
+					<div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Exam Type</label>
+						<div class="col-sm-9">
+					 		<select class="selectpicker form-control" ng-model="exmtyp">
+								<option>example</option>
+								<option>example</option> 
+					 		</select>
+						</div>
+				  	</div>
 
-    					<!-- table -->
-						<div class="row">                                 
-		          			<table class="table table-bordered">
-						  		<thead>
-							  		<tr>
-								 		<th>EXAMINATION TYPE</th>
-								 		<th>TEST DETAILS</th>
-								  		<th>UNIT</th>
-								  		<th>ORDER</th>
-							     		<th>MIN REFERANCE</th>
-										<th>MAX REFERANCE</th>
-								 		<th>MIN AGE</th>
-								  		<th>MAX AGE</th>
-								 		<th>GENDER</th>
-								 		<th>REF RANGE</th>
-						         		<th>ACTION</th>
-							 		</tr>
-				          		</thead>
-								<tbody>
-									<tr>
-								  		<td></td>
-								  		<td></td>
-								  		<td></td>
-								  		<td></td>
-								  		<td></td>
-								  		<td></td>
-								  		<td></td>
-								  		<td></td>
-								  		<td></td>
-								  		<td></td>
-								  		<td>
-							            	
-							          	</td>
-								 	</tr>
-								</tbody>
-			      			</table>
+					<div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Order:</label>
+			          	<div class="col-sm-9">
+		          			<input type="text" class="form-control" ng-model="ordr" id="124">
+		          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
+        					<span ng-show="form.first.$error.required">Mandatory Field</span>
+            			</div>
+		            </div>
 
+	             	<div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Max Refrance:</label>
+			          	<div class="col-sm-9">
+		          			<input type="text" class="form-control" ng-model="mxref" id="124">
+		          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
+        					<span ng-show="form.first.$error.required">Mandatory Field</span>
+            			</div>
+		            </div>
 
+		            <div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Max Age:</label>
+			          	<div class="col-sm-9">
+		          			<input type="text" class="form-control" ng-model="mxage" id="124">
+		          			<span style="color:red" ng-show="form.first.$dirty && form.first.$invalid"></span>
+        					<span ng-show="form.first.$error.required">Mandatory Field</span>
+            			</div>
+		            </div>
 
-
-
-
-
-    				
+		            <div class="form-group clearfix">
+             			<label class="control-label col-sm-3" for="inputdefault">Min Age:</label>
+			          	<div class="col-sm-9">
+			          		<input type="text" class="form-control" id="124">
+			          	</div>
+			        </div>
+		             		
+		            <div class="modal-footer" style="text-align:center;">
+             			<button type="button" class="btn btn-success" ng-click="add(val)">Save</button>
+                        <button type="button" class="btn btn-danger" ng-click="oldpatient">Clear</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+				<!-- table -->
+				<div class="row">                                 
+          			<table class="table table-bordered">
+				  		<thead>
+					  		<tr>
+						 		<th>EXAMINATION TYPE</th>
+						 		<th>TEST DETAILS</th>
+						  		<th>UNIT</th>
+						  		<th>ORDER</th>
+					     		<th>MIN REFERANCE</th>
+								<th>MAX REFERANCE</th>
+						 		<th>MIN AGE</th>
+						  		<th>MAX AGE</th>
+						 		<th>GENDER</th>
+						 		<th>REF RANGE</th>
+				         		<th>ACTION</th>
+					 		</tr>
+		          		</thead>
+						<tbody>
+							<tr>
+						  		<td></td>
+						  		<td></td>
+						  		<td></td>
+						  		<td></td>
+						  		<td></td>
+						  		<td></td>
+						  		<td></td>
+						  		<td></td>
+						  		<td></td>
+						  		<td></td>
+						  		<td></td>
+						 	</tr>
+						</tbody>
+		      		</table>
 				</div>
 			</div>
 		</div>

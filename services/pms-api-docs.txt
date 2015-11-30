@@ -1,4 +1,78 @@
 
+***********************************************************************************************
+
+todaysPatientTest
+==============
+URL --> http://localhost/PMS-1/services/index.php/user/todaysPatientTest
+* method = get
+
+Response:
+{
+  "status": "success",
+  "messege": "ok",
+  "patient_detail": [
+    {
+      "patient_id": "2",
+      "patient_name": "indrajit",
+      "patient_address": "kothrud",
+      "patient_state": "1",
+      "patient_distric": "2",
+      "patient_city": "2",
+      "patient_dob": "0000-00-00",
+      "patient_gender": "Male",
+      "patient_phone": "2044455",
+      "patient_mobile": "92",
+      "patient_email": "indra@gmail.com",
+      "patient_barcode": "",
+      "patient_test": [
+        {
+          "patient_test_id": "2",
+          "test_id": "2",
+          "test_name": "uddtest_name",
+          "test_heading": "Utest_heading",
+          "test_short_name": "sdf",
+          "is_collected": "2",
+          "test_status": "1",
+          "rejection_desc": "",
+          "test_start_date": "2015-11-29 06:00:00",
+          "test_end_date": "2015-11-30 00:00:00",
+          "test_exam_type": "1",
+          "test_details": "details",
+          "test_unit": "unit",
+          "test_display_order": "1",
+          "test_min_ref": "120.00",
+          "test_max_ref": "180.00",
+          "patient_min_age": "1",
+          "patient_max_age": "20"
+        },
+        {
+          "patient_test_id": "1",
+          "test_id": "1",
+          "test_name": "T3 ",
+          "test_heading": "",
+          "test_short_name": "T3 ",
+          "is_collected": "1",
+          "test_status": "1",
+          "rejection_desc": "",
+          "test_start_date": "2015-11-29 17:00:00",
+          "test_end_date": "2015-11-30 00:00:00",
+          "test_exam_type": "1",
+          "test_details": "test detail",
+          "test_unit": "testunit",
+          "test_display_order": "1",
+          "test_min_ref": "10.00",
+          "test_max_ref": "20.00",
+          "patient_min_age": "20",
+          "patient_max_age": "50"
+        }
+      ]
+    }
+  ]
+}
+
+***********************************************************************************************
+
+
 getTestType
 ==============
 URL --> http://localhost/PMS-1/services/index.php/common/getTestType
@@ -13,7 +87,7 @@ getTestTypeDetails
 ==============
 URL --> http://localhost/PMS-1/services/index.php/common/getTestTypeDetails?test_type_ID=2
 * method = get
-* test_type_ID = 2
+* test_type_ID = 2 or 1 or 3
 
 Response:
 

@@ -1,74 +1,97 @@
-<div class="row"><!-- Main ROW Open -->	
-	<h1>Descriptive test</h1>
+<div class="row"><!-- Main' ROW Open -->	
+	<h1 style="color:blue">Descriptive test</h1>
+	<hr>
 	<form role="form-inline">
 		<div class="col-md-12">
-			<div class="form-group">
-				<label class="control-label" for="inputdefault">Test name:</label>
-                <input capitalize class="form-control" ng-model="descriptiveTestName" id="inputdefault" type="text">
+			<div class="form-group clearfix">
+				<label class="control-label col-sm-3" for="inputdefault">Test name:</label>
+                <div class="col-sm-9">
+                	<input capitalize class="form-control" ng-model="descriptiveTestName" id="inputdefault" placeholder="Enter test name" type="text">
+                </div>
 			</div>
 
-            <div class="form-group">
-            	<label class="control-label" for="inputdefault">Test details:</label>
-                <textarea class="form-control custom-control" rows="15" style="resize:none"></textarea>      
+            <div class="form-group clearfix">
+            	<label class="control-label col-sm-3" for="inputdefault">Test details:</label>
+                <div class="col-sm-9">
+                	<textarea class="form-control custom-control" rows="15" style="resize:none"></textarea>
+                </div>      
 			</div>
-		</div>
 
-		<div class="col-md-12">
-			<div class="form-group ">
-				<label class="control-label" for="inputdefault">Test charges</label>:
-				<input type="number" name="input" class="form-control" ng-model="example.value" min="0" max="99" required />
+			<div class="form-group clearfix">
+				<label class="control-label col-sm-3" for="inputdefault">Test charges:</label>
+				<div class="col-sm-9">
+					<input type="number" name="input" class="form-control" ng-model="example.value" placeholder="00" min="0" max="99" required />
+				</div>
 			</div>
-			<div class="form-group">     
-				<label  class="control-label" for="inputdefault">Flag</label>:
-				<select class="selectpicker form-control">
+
+			<div class="form-group clearfix">     
+				<label  class="control-label col-sm-3" for="inputdefault">Flag:</label>
+				<div class="col-sm-9">
+					<select class="selectpicker form-control" style="width:60%; display:inline-block">
 					<option>example</option>
 					<option>example</option> 
 				</select>
 				<button type="button" class="btn btn-primary"> ADD </button>
+			</div>	
 			</div>
-				    
-			<div class="form-group">     
-				<label class="control-label" for="inputdefault">Method</label>:
-				<select class="selectpicker form-control">
-					<option>example</option>
-					<option>example</option>
-				</select>
-				<button type="button" class="btn btn-primary btn-md"> ADD </button>
+
+			<div class="form-group clearfix">     
+				<label class="control-label col-sm-3" for="inputdefault">Method:</label>
+				<div class="col-sm-9">
+					<select class="selectpicker form-control" style="width:60%; display:inline-block">
+						<option>example</option>
+						<option>example</option>
+					</select>
+					<button type="button" class="btn btn-primary btn-md"> ADD </button>
+				</div>
 			</div>
-					
-			<div class="form-group">
-				<label class="control-label" for="inputdefault">Sample</label>:
-				<select class="selectpicker form-control">
-					<option>example</option>
-					<option>example</option>
-				</select>
-			    <button type="button" class="btn btn-primary"> ADD </button>
+
+			<div class="form-group clearfix">
+				<label class="control-label col-sm-3" for="inputdefault">Sample:</label>
+				<div class="col-sm-9">
+					<select class="selectpicker form-control" style="width:60%; display:inline-block">
+						<option>example</option>
+						<option>example</option>
+					</select>
+				    <button type="button" class="btn btn-primary"> ADD </button>
+				</div>
 			</div>			       
 
-			<div class="form-group">
-				<label class="control-label" for="inputdefault">Instrument</label>:
-				<select class="selectpicker form-control">
-					<option>example</option>
-					<option>example</option>
-				</select>
-				<button type="button" class="btn btn-primary "> ADD </button>
+			<div class="form-group clearfix">
+				<label class="control-label col-sm-3" for="inputdefault">Instrument:</label>
+					<div class="col-sm-9">
+						<select class="selectpicker form-control" style="width:60%; display:inline-block">
+							<option>example</option>
+							<option>example</option>
+						</select>
+						<button type="button" class="btn btn-primary "> ADD </button>
+					</div>
 			</div>
 
-			<div class="form-group">
-				<label class="control-label" for="inputdefault">Outsourced Test</label>:
-				<select class="selectpicker form-control">
-					<option>hospital</option>
-					<option>clinic</option>
-				</select>
+			<div class="form-group clearfix">
+				<label class="control-label col-sm-3" for="inputdefault">Outsourced Test:</label>
+				<div class="col-sm-9">
+					<select class="selectpicker form-control">
+						<option>hospital</option>
+						<option>clinic</option>
+					</select>
+				</div>
 			</div>
 
-			<div class="form-group">
-				<div class="col-md-offset-2 col-md-12">
+			<div class="form-group clearfix">
+				<div class="col-md-12" style="background-color:#EBF1D2; text-align: center; padding:15px;">
 					<button type="button" class="btn btn-primary"> SAVE </button>
 					<button type="button" class="btn btn-info">UPDATE</button>
 					<button type="button" class="btn btn-warning">CLEAR</button>
 				</div>
 			</div>
+
+		</div>
+
+		<div class="col-md-12">
+			
+			
+				  
 
 		</div>	
 <hr class="seperator">

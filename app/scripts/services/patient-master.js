@@ -13,7 +13,7 @@ angular.module('pmsApp').factory('patientMaster', ['$resource', 'apiUrl', functi
 	return{
 			states: $resource(apiUrl.getStats, {}),
 			distric: $resource(apiUrl.getDistrics, {}),
-			patient: $resource(apiUrl.getPatient, {}),
+			patient: $resource(apiUrl.Patientmstr, {}),
           /*,
           sample:$resource(apiUrl.sample, {}),
           methode:$resource(apiUrl.methode, {}),
